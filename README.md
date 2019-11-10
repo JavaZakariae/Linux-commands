@@ -1,2 +1,3 @@
 # Linux-command
-linux command notes
+- remove a directory
+'''rm -r directoryname'''
