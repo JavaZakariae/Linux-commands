@@ -1,61 +1,81 @@
 
 # Linux
 - simple user
-'''$ prompt'''
+```$ prompt```
 
 - root user/admin
-''' # prompt '''
+```# prompt ```
 
 - switch from simple user to root user
-'''sudo -i'''
+```sudo -i```
 
 
 # Linux-command
 
 - how many users are logged in
-'''who'''
+```who```
 - who is the current user
-'''whoami'''
+```whoami```
 - print the date
-'''date'''
+```date```
 - show calendar
-'''cal'''
+```cal```
 - print working directory
-'''pwd'''
+```pwd```
 - print files and directory of the current directory
-'''ls'''
+```ls```
 - manual help
-'''man whoami'''
+```man whoami```
 
 - create a new directory
-'''mkdir directoryname'''
+```mkdir directoryname```
 
 - create a new empty file
-'''touch filename'''
+```touch filename```
 
 - remove a directory
-'''rmdir directoryname'''
+```rmdir directoryname```
 
 - remove a file
-'''rm filename'''
+```rm filename```
 
 - remove a directory and its content
-'''rm -r directoryname'''
+```rm -r directoryname```
 
 - display list of available commands
-'''help'''
+```help```
 
 - clear terminal
-'''clear'''
+```clear```
 
 - exit session
-'''exit'''
+```exit```
 
 - display date
-'''exit'''
+```date```
 
 - display time
-'''time'''
+```time```
 
 - print information
-'''hello'''
+```hello```
+
+
+## Linux-Types of files
+- Directory file
+- Normal file [binary, text]
+- Device file : every device is represented as a file.
+
+- show type of file
+```file file.txt```
+
+- linux read files based on their content and not based on their extensions.
+
+
+
+
+### Terminal
+- open the terminal: ```ctrl+alt+t```
+- close the terminal: ```ctral+d```
+- show the file that represent the current terminal: ```ttl``` ---> ```/dev/pts/0```
+- show files: ```ls -l``` ```-l```  means long listing.
