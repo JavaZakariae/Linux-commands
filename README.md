@@ -52,6 +52,8 @@
 
 - Print information: ```hello```.
 
+- Increase the font size: ```Ctrl, shift and +``` .
+
 
 ## Linux Files Types
 - Directory file.
@@ -94,3 +96,25 @@
 - root directory: home directory of the super user.
 - proc: proc means process, for each process a unique id is allocated, and a separate directory will be created inside the proc folder.
 - boot directory: it contains the required files to boot the linux system.
+
+## ls command and its options
+
+- List all files and directories of the directory dir1: ```ls dir1```.
+- List all files and directories of the current directory: ```ls```.
+- List content in reverse alphabetical order: ```ls -r```.
+- List content in a long format(more details on the content): ```ls -l```.
+- List content based on creation time: ```ls -t```.
+- Possibilioty to combine all the above options: ```ls -ltr```.
+- List also the hidden files: ```ls -a```.
+- List contents by type: ```ls -F``` (/, *, @).
+- List contents recursively: ```ls -R```.
+- List contents with total size(1 block = 1024kb): ```ls -s```.
+- List contents of the top 10 entries: ```ls -l /dir | head```.
+- List contents of the top 5 entries: ```ls -l /dir | head -5```.
+- List contents of the bottom 10 entries: ```ls -l /dir | tail```.
+- List contents page by page: ```ls -l /dir | more``` or ```ls -l /dir | less```, less is more powerful(forward and backword direction).
+
+## Different linux commands:
+
+- Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
+
