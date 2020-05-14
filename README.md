@@ -13,6 +13,7 @@
 
 - Switch from simple user to root user: ```sudo -i```.
 
+- Switch from root to simple user:  ```exit```.
 
 ## Introduction
 - How many users are logged in: ```who```.
@@ -76,3 +77,20 @@
 - Go to the home directory: ``` cd ```.
 - Go to the previous directory: ``` cd -```.
 - ```/``` is the topmost root.
+
+## Linux sub-directories
+
+- bin directoery: it contains all binary executables related to our linux commands, ```which touch``` will print ```/user/bin/touch```.
+- sbin directory: it means system bin, an it contains binary executables related to the super user. 
+- etc directory: it contains system configuration informations required by the operationg system, for example the passwords of the users ```/etc/passwd```, groups info ```/etc/group``` and hosts info ```/etc/hosts```(ip addresses and dns names).
+- tmp directory: ```tmp``` means temporary, if any file or directory is required temporary, it is created under the tmp folder in the current session. the content of the directory will be deleted automatically after the shutdown.
+- dev directory: ```dev``` means device, all the device related files will be stored in this directory, using those files, we can communicate with the device, tty file for terminal related files, hd for harde drive file ...
+- mnt directory, media directory(for mounting).
+- opt directory: opt means optional, it contains all the 3rd part software installaion files.
+- lib directory: lib means libraries, which are required by applications.
+- var: var means variable data, variable data will be stored inside this directory, for example the log files. 
+- usr: all users related software.
+- home: every user has a separate folder to hold his specific data like images, documents and so one.
+- root directory: home directory of the super user.
+- proc: proc means process, for each process a unique id is allocated, and a separate directory will be created inside the proc folder.
+- boot directory: it contains the required files to boot the linux system.
