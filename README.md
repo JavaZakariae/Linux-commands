@@ -114,6 +114,16 @@
 - List contents of the bottom 10 entries: ```ls -l /dir | tail```.
 - List contents page by page: ```ls -l /dir | more``` or ```ls -l /dir | less```, less is more powerful(forward and backword direction).
 
+## Creation of directories
+
+- To create a directory in the same pwd: ```mkdir directoryName```.
+- To create multiple directories in the same pwd: ```mkdir dir1 dir2 dir3```.
+- To create multiple directories from the same pwd: ```mkdir -p dir1/dir2/dir3```. ```dir1, dir2``` will be created only if they don't exist already.
+- To create multiple directories ```mkdir -p dir1/dir2{dir3-1,dir3-2,dir3-3}/dir{1..31}```, every dir3-x will contains 31 directories.
+- Show directory content as a tree datastructure:  ```tree```.
+
+
+
 ## Different linux commands:
 
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
