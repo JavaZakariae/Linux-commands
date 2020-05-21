@@ -130,7 +130,13 @@
 - Force removal ```-f```: ```rm -rf dir1```.
 - Verbose option ```-v```: ```rm -rv dir1```, to print the flow of the deletion process.
 
+## Copying, moving and renaiming files and directories
 
+- To copy file content from one file to another: ```cp a.txt b.txt```, if ```b.txt``` doesn't exist, a new file will be created, if it already exists, the file will be overwritten. ```cp a.txt home/anotherDirectory/c.txt``` to copy content to another destination.
+- To copy files to directories: ```cp a.txt b.txt c.txt home/anotherDirectory/d.txt```, to copy all files ```cp dir1/* dir2```.
+- To copy total diretory: ```cp -r dir1 dir2```, the content of ```dir1``` will be copied to ```dir2```.
+- Renaiming a file: ```mv a.txt b.txt```, to rename a directory ```mv dir1 dir2```, if ```dir2``` already exists, ```dir1``` wil be moved inside ```dir2```.
+- Moving files from one directory to another: ```mv dir1/* dir2```, ```mv a.txt b.txt dir2```.
 
 ## Different linux commands:
 
