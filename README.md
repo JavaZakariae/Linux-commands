@@ -122,6 +122,14 @@
 - To create multiple directories ```mkdir -p dir1/dir2{dir3-1,dir3-2,dir3-3}/dir{1..31}```, every dir3-x will contains 31 directories.
 - Show directory content as a tree datastructure:  ```tree```.
 
+## Removing directories, rm and rmdir commands
+
+- To remove directories: ```rmdir dir1 dir2``` (rmdir removes only directories, no file will be deleted, and it will works only if the directories are empty).
+- To remove directories: ```rm -r dir1```, or ```rm -R dir1```. For files no need to the ```-r``` option, ```-r``` for recursive operations.
+- To get confirmation before deleting the contents: ```rm -r -i dir1```.
+- Force removal ```-f```: ```rm -rf dir1```.
+- Verbose option ```-v```: ```rm -rv dir1```, to print the flow of the deletion process.
+
 
 
 ## Different linux commands:
