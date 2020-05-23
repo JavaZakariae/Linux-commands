@@ -138,6 +138,14 @@
 - Renaiming a file: ```mv a.txt b.txt```, to rename a directory ```mv dir1 dir2```, if ```dir2``` already exists, ```dir1``` wil be moved inside ```dir2```.
 - Moving files from one directory to another: ```mv dir1/* dir2```, ```mv a.txt b.txt dir2```.
 
+
+## Creation of files using cat, touch, gedit and vi
+
+- Using the cat command: ```cat > a.txt```, a possibility to write content on the a.txt file, ctrl+c to save and exit, if the file is already available, the data will be overwritten, to perform append operation, ```cat >> a.txt```.
+- Using the touch command: ```touch b.txt```, a new empty file will be created, if the file is already available, the data will be not be overwritten, only the last date of modification will be modified.
+- Using the gedit command: ```gedit c.txt```, ctr+s to save, ctrl+q to quit the graphical editor.
+- Using vi editor: ```gedit d.txt```, press i to enter the insert mode, press esc key, :wq to save and quit the editor. vim is an advanced version of the vi editor.
+
 ## Different linux commands:
 
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
