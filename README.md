@@ -146,6 +146,21 @@
 - Using the gedit command: ```gedit c.txt```, ctr+s to save, ctrl+q to quit the graphical editor.
 - Using vi editor: ```gedit d.txt```, press i to enter the insert mode, press esc key, :wq to save and quit the editor. vim is an advanced version of the vi editor.
 
+
+## View files contents using cat, tac, rev, head and tail
+- View content using cat command:  ```cat < a.txt```, where ```<``` symbol is optional. ```-n``` option to display line numbers, ```-n``` to skip blank lines numbering. ```cat a.txt b.txt``` will print the content of the two passed files.
+- Create and add content to a file: ```cat > a.txt```, ```added content```, ```ctrl+d``` to exit the editing section.```>>``` for append operation.
+- Copy content from one file to another using cat command: ```cat a.txt >> b.txt```, using ```>``` will overwrite the content of the b.txt file. 
+- Copy content from many files to one file: ```cat a.txt b.txt >> c.txt```.
+- View content of a file in reversed order: ```tac a.txt```, the order here is the order of the file lines.
+- View content of a file in a horizental reversed order: ```rev a.txt```, if the content of ```a.txt``` is ```content```, the result of the previous command will be ```tnetnoc```.
+- ```cat``` command is suitable for small ```files```, if the files are huge, ```head``` and ```tail```, ```more``` and ```less``` are the most recommended commands.
+- To view specified lines from the top of a file: ```head a.txt```, first 10 lines ```head -n 10 a.txt```, abbreviation: ```head -10 a.txt```.
+- To view specified lines except some specified lines: ```head -n -5 a.txt``` will diplay all lines except the last 5 lines.
+- To view specified number of character: ```head -c 5 a.txt``` will show the first 5 characters.
+- To view specified lines from the bottom of a file: ```tail a.txt``` last 10 lines, last 5 lines ```tail -n 5 a.txt```, abbreviation: ```tail -5 a.txt```, ```tail -c 100 a.txt``` will print the last ```100``` characters.
+- To view content from line 3 to line 7 using piping: ```head -7 a.txt | tail -5```.
+
 ## Different linux commands:
 
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
