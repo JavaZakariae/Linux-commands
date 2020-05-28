@@ -142,6 +142,12 @@
 - To view file content page per page:  ```more a.txt```, press ```enter``` to diplay next line, press ```space bar``` to diplay the next page, press ```q``` to exit, ```more -d a.txt``` to diplay more info about the file. By using more command, we can view file content page per page only in forward direction.
 - To view file content page per page either in forward direction or backward direction: ```less a.txt```, press ```d``` to diplay the next page (d means down),  press ```b``` to diplay the previous page (b means backward).
 
+## Creation of hidden files and directories
+- If any file name starts with ```.```, such file is a hidden file.
+- Create hiiden files: the name of the file should begin by a ```.```, example: ```touch .a.txt```, ```cat > .b.dat```
+- Display hiden files: ```ls -a```
+- Create hiiden directories: ```mkdir .dir1```
+- Conversion of Normal/hidden files: using renaiming operation, ```mv .a.txt a.txt```
 
 ## Different linux commands:
 
