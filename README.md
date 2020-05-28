@@ -161,6 +161,11 @@
 - To view specified lines from the bottom of a file: ```tail a.txt``` last 10 lines, last 5 lines ```tail -n 5 a.txt```, abbreviation: ```tail -5 a.txt```, ```tail -c 100 a.txt``` will print the last ```100``` characters.
 - To view content from line 3 to line 7 using piping: ```head -7 a.txt | tail -5```.
 
+## View files content using less and more
+- To view file content page per page:  ```more a.txt```, press ```enter``` to diplay next line, press ```space bar``` to diplay the next page, press ```q``` to exit, ```more -d a.txt``` to diplay more info about the file. By using more command, we can view file content page per page only in forward direction.
+- To view file content page per page either in forward direction or backward direction: ```less a.txt```, press ```d``` to diplay the next page (d means down),  press ```b``` to diplay the previous page (b means backward).
+
+
 ## Different linux commands:
 
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
