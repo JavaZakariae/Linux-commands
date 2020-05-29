@@ -52,8 +52,8 @@
 ## File Navigation System
 
 - Display hidden files: ```ls -a```  ```-a``` means all.
-- Home directory: ```\home\user1```, ```\home``` contains the home users directories.
-- Go to the home directory: ``` cd ```
+- Home directory: ```/home/user1```, ```/home``` contains the home users directories.
+- Go directly to the home directory: ```cd ``` or ```cd ~ ```
 - Go to the previous directory: ``` cd -```
 - ```/``` is the topmost root.
 
@@ -148,6 +148,15 @@
 - Display hiden files: ```ls -a```
 - Create hiiden directories: ```mkdir .dir1```
 - Conversion of Normal/hidden files: using renaiming operation, ```mv .a.txt a.txt```
+
+## Copying, moving and renaiming files and directories using cp and mv commands (2)
+- ```cp a.txt b.txt```, if b.txt exists, its content will be ovewritten directly, to get confirmation message, ```cp -i a.txt b.txt```
+- Copy multiple files content to one destination file: ```cat a.txt b.txt > c.txt```
+- Moving and renaming files: ```mv oldname.txt newname.txt```
+- Moving and renaming directories: ```mv olddirname newdirname```, if olddirname exists already, then olddirname will be moved to newdirname, otherwise the renaming operation will take place.
+- Moving selected files to a directory: ```mv a.txt b.txt dir1```
+- Moving all files of one directory to another directory: ```mv dir1/* dir2```
+- Moving using absolute path:  ```mv ~/dir1/* ~/dir2```, ```~/dir2``` equivalent to ```/home/userName/dir2```
 
 ## Different linux commands:
 
