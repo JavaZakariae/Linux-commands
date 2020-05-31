@@ -162,3 +162,11 @@
 
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
 
+## Comparing content of files (diff, sdiff...)
+
+- ```cmp``` command: comparing files byte by byte, ```cmp file1.txt file2.txt```, if the files content are the same, no output, otherwise information about the first found difference, byte number and line number will be shown.
+Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```cmp file1.txt file2.txt```, output will be ```file1.txt file2.txt differ: char 6, line 1```
+
+- ```diff``` command: it will show all differences, ```diff file1.txt file2.txt```
+- ```sdiff``` command: all differences in a parallel comparison.
+- ```vimdiff``` command: advanced tool to show the differences, it will highlight all differnces in a vim editor, ```sudo apt-get install vim``` to install the tool, two windows will be shown, ```ctrl+w+w``` to go to the other window, ```:q``` to close current window, ```:qa``` to close all windows, ```:qai``` close and ignore all changes. 
