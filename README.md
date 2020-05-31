@@ -100,7 +100,6 @@
 - Show directory content as a tree datastructure:  ```tree```
 
 ## Removing directories, rm and rmdir commands
-
 - To remove directories: ```rmdir dir1 dir2``` (rmdir removes only directories, no file will be deleted, and it will works only if the directories are empty).
 - To remove directories: ```rm -r dir1```, or ```rm -R dir1```. For files no need to the ```-r``` option, ```-r``` for recursive operations.
 - To get confirmation before deleting the contents: ```rm -r -i dir1```
@@ -108,16 +107,13 @@
 - Verbose option ```-v```: ```rm -rv dir1```, to print the flow of the deletion process.
 
 ## Copying, moving and renaiming files and directories
-
 - To copy file content from one file to another: ```cp a.txt b.txt```, if ```b.txt``` doesn't exist, a new file will be created, if it already exists, the file will be overwritten. ```cp a.txt home/anotherDirectory/c.txt``` to copy content to another destination.
 - To copy files to directories: ```cp a.txt b.txt c.txt home/anotherDirectory/d.txt```, to copy all files ```cp dir1/* dir2```
 - To copy total diretory: ```cp -r dir1 dir2```, the content of ```dir1``` will be copied to ```dir2```
 - Renaiming a file: ```mv a.txt b.txt```, to rename a directory ```mv dir1 dir2```, if ```dir2``` already exists, ```dir1``` wil be moved inside ```dir2```
 - Moving files from one directory to another: ```mv dir1/* dir2```, ```mv a.txt b.txt dir2```
 
-
 ## Creation of files using cat, touch, gedit and vi
-
 - Using the cat command: ```cat > a.txt```, a possibility to write content on the a.txt file, ctrl+c to save and exit, if the file is already available, the data will be overwritten, to perform append operation, ```cat >> a.txt```
 - Using the touch command: ```touch b.txt```, a new empty file will be created, if the file is already available, the data will be not be overwritten, only the last date of modification will be modified.
 - Using the gedit command: ```gedit c.txt```, ctr+s to save, ctrl+q to quit the graphical editor.
@@ -158,15 +154,24 @@
 - Moving all files of one directory to another directory: ```mv dir1/* dir2```
 - Moving using absolute path:  ```mv ~/dir1/* ~/dir2```, ```~/dir2``` equivalent to ```/home/userName/dir2```
 
-## Different linux commands:
-
-- Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
 
 ## Comparing content of files (diff, sdiff...)
-
 - ```cmp``` command: comparing files byte by byte, ```cmp file1.txt file2.txt```, if the files content are the same, no output, otherwise information about the first found difference, byte number and line number will be shown.
 Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```cmp file1.txt file2.txt```, output will be ```file1.txt file2.txt differ: char 6, line 1```
 
 - ```diff``` command: it will show all differences, ```diff file1.txt file2.txt```
 - ```sdiff``` command: all differences in a parallel comparison.
 - ```vimdiff``` command: advanced tool to show the differences, it will highlight all differnces in a vim editor, ```sudo apt-get install vim``` to install the tool, two windows will be shown, ```ctrl+w+w``` to go to the other window, ```:q``` to close current window, ```:qa``` to close all windows, ```:qai``` close and ignore all changes. 
+
+##  Soft and hard link
+- In Windows, we have only soft link files (shortcut|raccourci), in linux we have also hard link files.
+- Hard link file is just another name of the same file. We can create hard link files using the following command ```ln sourcefile.txt hardlinkfile.txt```
+- If we deleted the source file, the hard link file wil still exists. If we modify the content of the (sourcefile|link hard file), the update will be reflected also in the (sourcefile|link hard file).
+- Soft link file is just a shortcut of the original file (same as windows). If we delete the original file, the soft link file will be broken. We can create soft link files using the following command ```ln -s sourcefile.txt softlinkfile.txt```
+- Change made in the original file will also be reflected to the Soft link file.
+- For directories, it is not possible to create hard link. 
+
+
+## Different linux commands:
+
+- Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
