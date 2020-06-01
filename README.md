@@ -171,7 +171,14 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - Change made in the original file will also be reflected to the Soft link file.
 - For directories, it is not possible to create hard link. 
 
+## Sort commands: 
+- Sort command, to sort files content line by line in an alphabetical order: ```sort a.txt``` will only print the sorted order. ```sort a.txt > b.txt``` will redirect the sorted order output to the new file. ```sort a.txt > temp.txt``` and ```mv temp.txt > a.txt``` will make change on the same source file.
+- Sort in a reverse alphabetical order: ```sort -r a.txt```
+- The spaces in the beginnning of a line are ignored, blank line came first when sorting, Upper case before lowercase, If the file contains numbers, the numbers will come before letters.
+- If we want only unique lines, no duplicate, we should use ```-u``` option, ```sort -u a.txt```
+- If we want to sort based on numerical values: ```sort -n a.txt```, ```sort -nr a.txt```
+- Sort based on the column line number:  ``` ls etc/ -l | head -7 | sort -rk 5``` will show the info of the top 7 files in etc folder and will sort them recursivly based on the fifth column (length of file).
+- Sort based on the column lines in a file composed by lines in the following format ```token1:token2:token3```, ```:``` is called a separator. To sort such file: ```sort -k 3 -t ":" a.txt```
 
 ## Different linux commands:
-
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
