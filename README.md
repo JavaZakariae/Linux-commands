@@ -180,5 +180,14 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - Sort based on the column line number:  ``` ls etc/ -l | head -7 | sort -rk 5``` will show the info of the top 7 files in etc folder and will sort them recursivly based on the fifth column (length of file).
 - Sort based on the column lines in a file composed by lines in the following format ```token1:token2:token3```, ```:``` is called a separator. To sort such file: ```sort -k 3 -t ":" a.txt```
 
+## Uniq commands: 
+- Find unique content ```sort -u a.txt```, but uniq command is more powerful, ```uniq a.txt``` works only on sorted files, ```sort a.txt | uniq```.
+- With uniq command, we can use multiple options:
+  - ```-d```: to disply ony duplicate lines.
+  - ```-c```: to disply numbers of occurences of each line.
+  - ```-i```: to ignore case while comparing.
+  - ```-u```: to disply ony unique lines.
+  
+
 ## Different linux commands:
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
