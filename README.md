@@ -190,12 +190,21 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
   
 ## Input and Output:   
 - command take some input and produces some output:  
-  - Input in two forms: stdin or command line argument, stdin example: ```echo "hello" >> file.txt```,  command line argument example:  ```touch file.txt```
+  - Input in two forms: stdin or command line argument, stdin example: `echo "hello" >> file.txt`,  command line argument example:  `touch file.txt`
   - Output in two forms: stdout or stderror, stderror in cas when the terminal print arrors.
 - Standard Input, Standard Output and Standard Error are data stream and can be redirected from one place to another place. Hence, piping and redirection are possible on those data streams.
     - stdIn associated with the number 0, by defualt it is connected with the keyboard.
     - stdOutput associated with the number 1, connected with the terminal.
     - stdError associated with the number 2, connected with the terminal.
 
+## Redirecting stdInput stdOutput and  stdError:   
+- Redirecting stdOutput: We can perform redirection using `>` and `>>`, `cat 1> output.txt`
+- Redirecting standard error: Instead of terminal we can redirect messages from terminal to another place, a file as an example. `cal jkbjkcabjkac 2> log.txt`, 2 stands for stdError.
+- Redirecting standard input: we can use the `<` symbol to perform input redirection, `cat 0< a.txt`, 0 is optional.
+- Examples:
+    - `cat 0<a.txt 1>copy.txt 2>error.txt`
+    - `cat <a.txt >copy.txt 2>error.txt`
+    - `cat <a.txt &>copy.txt`, means either output or error direction to the copy.txt file.
+    
 ## Different linux commands:
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
