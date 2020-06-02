@@ -7,31 +7,31 @@
 5. [File Navigation System](##File_Navigation_System).
 
 ## Linux
-- Simple user: ```$ prompt```
-- Root user/admin: ```# prompt```
-- Switch from simple user to root user: ```sudo -i```
-- Switch from root to simple user:  ```exit```
+- Simple user: `$ prompt`
+- Root user/admin: `# prompt`
+- Switch from simple user to root user: `sudo -i`
+- Switch from root to simple user:  `exit`
 
 ## Introduction
-- How many users are logged in: ```who```
-- Who is the current user: ```whoami```
-- Print the date: ```date```
-- Show calendar: ```cal```
-- Print working directory: ```pwd```
-- Print files and directory of the current directory: ```ls```
-- Manual help: ```man whoami```
-- Create a new directory: ```mkdir directoryname```
-- Create a new empty file: ```touch filename```
-- Remove a directory: ```rmdir directoryname```
-- Remove a file: ```rm filename```
-- Remove a directory and its content: ```rm -r directoryname```
-- Display list of available commands: ```help```
-- Clear terminal: ```clear```
-- Exit session: ```exit```
-- Display date: ```date```
-- Display time: ```time```
-- Print information: ```hello```
-- Increase the font size: ```Ctrl, shift and +``` 
+* How many users are logged in: `who`
+* Who is the current user: `whoami`
+* Print the date: `date`
+- Show calendar: `cal`
+- Print working directory: `pwd`
+- Print files and directory of the current directory: `ls`
+- Manual help: `man whoami`
+- Create a new directory: `mkdir directoryname`
+- Create a new empty file: `touch filename`
+- Remove a directory: `rmdir directoryname`
+- Remove a file: `rm filename`
+- Remove a directory and its content: `rm -r directoryname`
+- Display list of available commands: `help`
+- Clear terminal: `clear`, `ctrl+l`
+- Exit session: ``exit`
+- Display date: `date`
+- Display time: `time`
+- Print information: `hello`
+- Increase the font size: `Ctrl, shift and +`
 
 
 ## Linux Files Types
@@ -188,6 +188,14 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
   - ```-i```: to ignore case while comparing.
   - ```-u```: to disply ony unique lines.
   
+## Input and Output:   
+- command take some input and produces some output:  
+  - Input in two forms: stdin or command line argument, stdin example: ```echo "hello" >> file.txt```,  command line argument example:  ```touch file.txt```
+  - Output in two forms: stdout or stderror, stderror in cas when the terminal print arrors.
+- Standard Input, Standard Output and Standard Error are data stream and can be redirected from one place to another place. Hence, piping and redirection are possible on those data streams.
+    - stdIn associated with the number 0, by defualt it is connected with the keyboard.
+    - stdOutput associated with the number 1, connected with the terminal.
+    - stdError associated with the number 2, connected with the terminal.
 
 ## Different linux commands:
 - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
