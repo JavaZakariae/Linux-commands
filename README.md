@@ -171,7 +171,7 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - Change made in the original file will also be reflected to the Soft link file.
 - For directories, it is not possible to create hard link. 
 
-## Sort commands: 
+## Sort commands 
 - Sort command, to sort files content line by line in an alphabetical order: ```sort a.txt``` will only print the sorted order. ```sort a.txt > b.txt``` will redirect the sorted order output to the new file. ```sort a.txt > temp.txt``` and ```mv temp.txt > a.txt``` will make change on the same source file.
 - Sort in a reverse alphabetical order: ```sort -r a.txt```
 - The spaces in the beginnning of a line are ignored, blank line came first when sorting, Upper case before lowercase, If the file contains numbers, the numbers will come before letters.
@@ -180,7 +180,7 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - Sort based on the column line number:  ``` ls etc/ -l | head -7 | sort -rk 5``` will show the info of the top 7 files in etc folder and will sort them recursivly based on the fifth column (length of file).
 - Sort based on the column lines in a file composed by lines in the following format ```token1:token2:token3```, ```:``` is called a separator. To sort such file: ```sort -k 3 -t ":" a.txt```
 
-## Uniq commands: 
+## Uniq commands
 - Find unique content ```sort -u a.txt```, but uniq command is more powerful, ```uniq a.txt``` works only on sorted files, ```sort a.txt | uniq```.
 - With uniq command, we can use multiple options:
   - ```-d```: to disply ony duplicate lines.
@@ -188,7 +188,7 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
   - ```-i```: to ignore case while comparing.
   - ```-u```: to disply ony unique lines.
   
-## Input and Output:   
+## Input and Output
 - command take some input and produces some output:  
   - Input in two forms: stdin or command line argument, stdin example: `echo "hello" >> file.txt`,  command line argument example:  `touch file.txt`
   - Output in two forms: stdout or stderror, stderror in cas when the terminal print arrors.
@@ -197,7 +197,7 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
     - stdOutput associated with the number 1, connected with the terminal.
     - stdError associated with the number 2, connected with the terminal.
 
-## Redirecting stdInput stdOutput and  stdError:   
+## Redirecting stdInput stdOutput and  stdError
 - Redirecting stdOutput: We can perform redirection using `>` and `>>`, `cat 1> output.txt`
 - Redirecting standard error: Instead of terminal we can redirect messages from terminal to another place, a file as an example. `cal jkbjkcabjkac 2> log.txt`, 2 stands for stdError.
 - Redirecting standard input: we can use the `<` symbol to perform input redirection, `cat 0< a.txt`, 0 is optional.
@@ -205,6 +205,11 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
     - `cat 0<a.txt 1>copy.txt 2>error.txt`
     - `cat <a.txt >copy.txt 2>error.txt`
     - `cat <a.txt &>copy.txt`, means either output or error direction to the copy.txt file.
-    
-## Different linux commands:
-- Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
+    - Redirect the documentation content of the ls command to some output file:  ```man ls > newfile.txt```.
+
+## Piping  
+- `ls -l /etc | more`, the output of the first command will be the input of the second command.
+- `ls -l /etc > somefile.txt | more`, no piping beacause the redirection symbol breaks the piping.
+- `tee` commmand: if we want to save the output of intermedite command and want to pass that output as input to next command, `ls -l /etc tee somefile.txt | more`
+- `rm` command can't take data stream as input, but can only get arguments from the command line terminal, for that purpose, the command `xargs` can be used to converts data stream to arguments. Example: `cat /etc | xargs rm`
+- pipe symbol `|` can be used to link two commands, `>` is useful when redirecting the output to another place.
