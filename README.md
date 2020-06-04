@@ -213,3 +213,8 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - `tee` commmand: if we want to save the output of intermedite command and want to pass that output as input to next command, `ls -l /etc tee somefile.txt | more`
 - `rm` command can't take data stream as input, but can only get arguments from the command line terminal, for that purpose, the command `xargs` can be used to converts data stream to arguments. Example: `cat /etc | xargs rm`
 - pipe symbol `|` can be used to link two commands, `>` is useful when redirecting the output to another place.
+
+## Execute multiple command
+- `ls -l /etc | more`: the preceding commands are dependent commands, to run multiple independent commands in one line, we can use the `;` symbol or by using `&&`.
+- By using `;`: e.g. `cmd1;cmd2;cmd3`, if `cmd2` fails, `cmd3` will be executed.
+- By using `&&`: e.g. `cmd1&&cmd2&&cmd3`, if `cmd2` fails, `cmd3` will not be executed.
