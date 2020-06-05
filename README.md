@@ -218,3 +218,13 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - `ls -l /etc | more`: the preceding commands are dependent commands, to run multiple independent commands in one line, we can use the `;` symbol or by using `&&`.
 - By using `;`: e.g. `cmd1;cmd2;cmd3`, if `cmd2` fails, `cmd3` will be executed.
 - By using `&&`: e.g. `cmd1&&cmd2&&cmd3`, if `cmd2` fails, `cmd3` will not be executed.
+
+## Commands aliasing
+- Aliases are nicknames given to a given command.
+- Syntax: `alias nickname="original command name"`, example: `alias cls=clear`. Spaces are not allowed before and after the `=` symbol.
+- To list the existed aliases: `alias`, to delete a given alias: `unalias cls`, to delete all aliases `unalias -a`
+- To know the original name of an alias: `type cls`
+- Aliases are temporary unless we persist them permanently: 
+    - Editing the .bashrc file, It could be found inside the user home directory.
+    - Create our new aliasing file, the name of the file should be .bash_aliasses and should be located in the user home directory.
+
