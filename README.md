@@ -242,5 +242,7 @@ Regular expressions.
     - [0-9]  ----> any digit from 0 to 9.
     - [a-zA-Z0-9]  ----> any of the two above.
     - [!a-zA-Z0-9] ---->  negation of the above.
-
+- Examples: `ls *`, `ls *.*`, `ls *.txt`, `ls a*`, `ls a*t.*`, `ls a?.*`.
+    - `ls [abc]*`: aaaaaa, bbbb, ....
+    - `ls [!abc]*`: should not start with a, b  or c.
 
