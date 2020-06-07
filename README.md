@@ -227,4 +227,20 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - Aliases are temporary unless we persist them permanently: 
     - Editing the .bashrc file, It could be found inside the user home directory.
     - Create our new aliasing file, the name of the file should be .bash_aliasses and should be located in the user home directory.
+    
+## Regular expressions
+- If we want to represent a collection of strings according to a particular pattern, then we should go for 
+Regular expressions.
+- Some reg expressions rules:
+    - \* ----> 0 or more character.
+    - ?  ----> 1 character.
+    - [abc]  ----> a or b or c.
+    - [!abc]  ----> only one character but not a or b or c.
+    - [a-z]  ----> any lower case character from a to z.
+    - [A-Z]  ----> any upper case character from A to Z.
+    - [a-zA-Z] ----> any alphabet from a to z or from A to Z.
+    - [0-9]  ----> any digit from 0 to 9.
+    - [a-zA-Z0-9]  ----> any of the two above.
+    - [!a-zA-Z0-9] ---->  negation of the above.
+
 
