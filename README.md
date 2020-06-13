@@ -246,3 +246,9 @@ Regular expressions.
     - `ls [abc]*`: aaaaaa, bbbb, ....
     - `ls [!abc]*`: should not start with a, b  or c.
 
+## locate
+- We can use locate to locate files and directories in our system.
+- `locate file.txt`, `locate *.txt`: to locate the given entries, locate command look in a database to locate the given entries, the database is updated only one time a day, so to update the database we should use the following command: `sudo updatedb`
+- `locate -S`: to get the statistics of the database, `locate -i FilE.txt` to ignore case sensivity. `locate --limit 5 a.txt` to limit the search to 5 entries.
+- `locate --existing b.jpeg`, or with `-e` option: check if the gievn file exist or not.
+- Advantage of using a database is related to performance.
