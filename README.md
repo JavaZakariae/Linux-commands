@@ -252,3 +252,17 @@ Regular expressions.
 - `locate -S`: to get the statistics of the database, `locate -i FilE.txt` to ignore case sensivity. `locate --limit 5 a.txt` to limit the search to 5 entries.
 - `locate --existing b.jpeg`, or with `-e` option: check if the gievn file exist or not.
 - Advantage of using a database is related to performance.
+
+## find command (episode 31)
+- It provides more search option comparing to the locate command. contrary to the locate command, the find command will search directly in the file system.
+- We can search only files, only directories, search by name, search by size...
+- `find`: by default, it will look for all files and directories from the current directory and below in the linux file system.
+- `find /home`: look for all files and directories from the current directory and below.
+- `find -maxdepth 2`: will limit the search only in the 2 levels.
+- By default the find command will also look for hidden files.
+- `find -type f`: will limit the search to the files.
+- `find -type d`: will limit the search to the directories.
+- `find . -type f -name d?.*`: look for files inside the current directory and below with the given name that match given regular expression, `-iname` option to ignore case.
+- `find . -type f -size +200k`: look for files that have size greater than 200 kbytes, `-size -200k` for less than, `-size 100k` for equality size. 
+
+
