@@ -32,7 +32,8 @@
 - Display time: `time`
 - Print information: `hello`
 - Increase the font size: `Ctrl, shift and +`
-
+- Print 5 random numbers between 1 and 100: `shuf -i 1-100 -n 5`
+- Creating file using the `shuf` command: `touch dir$(shuf -i 1-10 -n 1)/sunny.txt `
 
 ## Linux Files Types
 - Directory file.
