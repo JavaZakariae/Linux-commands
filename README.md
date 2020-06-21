@@ -1,10 +1,34 @@
 
 # Table of Contents
-1. [Linux](##Linux).
-2. [Introduction](##Introduction).
-3. [Linux Files Types](##Linux_Files_Types).
-4. [Terminal](##Terminal)
-5. [File Navigation System](##File_Navigation_System).
+1. [Linux](https://github.com/JavaZakariae/Linux-command#Linux).
+2. [Introduction](https://github.com/JavaZakariae/Linux-command##Introduction).
+3. [Linux Files Types](https://github.com/JavaZakariae/Linux-command##Linux_Files_Types).
+4. [Terminal](https://github.com/JavaZakariae/Linux-command##Terminal)
+5. [File Navigation System](https://github.com/JavaZakariae/Linux-command##File_Navigation_System).
+6. [Linux sub-directories](https://github.com/JavaZakariae/Linux-command#)
+7. [ls command and its options](https://github.com/JavaZakariae/Linux-command#)
+8. [Creation of directories](https://github.com/JavaZakariae/Linux-command#)
+9. [Removing directories, rm and rmdir commands](https://github.com/JavaZakariae/Linux-command#)
+10.[Copying, moving and renaiming files and directories](https://github.com/JavaZakariae/Linux-command#)
+11. [Creation of files using cat, touch, gedit and vi](https://github.com/JavaZakariae/Linux-command#)
+12. [View files contents using cat, tac, rev, head and tail](https://github.com/JavaZakariae/Linux-command#)
+13. [View files content using less and more](https://github.com/JavaZakariae/Linux-command#)
+14. [Creation of hidden files and directories](https://github.com/JavaZakariae/Linux-command#)
+15. [Copying, moving and renaiming files and directories using cp and mv commands (2)](https://github.com/JavaZakariae/Linux-command#)
+16. [Comparing content of files (diff, sdiff...)](https://github.com/JavaZakariae/Linux-command#)
+17. [Soft and hard link](https://github.com/JavaZakariae/Linux-command#)
+18. [Sort commands](https://github.com/JavaZakariae/Linux-command#)
+19. [Uniq commands](https://github.com/JavaZakariae/Linux-command#)
+20. [Input and Output](https://github.com/JavaZakariae/Linux-command#)
+21. [Redirecting stdInput stdOutput and  stdError](https://github.com/JavaZakariae/Linux-command#)
+22. [Piping]  (https://github.com/JavaZakariae/Linux-command#)
+23. [Execute multiple command] (https://github.com/JavaZakariae/Linux-command#)
+24. [Commands aliasing](https://github.com/JavaZakariae/Linux-command#)
+25. [Regular expressions](https://github.com/JavaZakariae/Linux-command#)
+26. [locate](https://github.com/JavaZakariae/Linux-command#)
+27. [find command](https://github.com/JavaZakariae/Linux-command#)
+28. [Compression and uncompression of files (episode 33)](https://github.com/JavaZakariae/Linux-command#)
+
 
 ## Linux
 - Simple user: `$ prompt`
