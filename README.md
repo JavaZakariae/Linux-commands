@@ -266,4 +266,17 @@ Regular expressions.
 - `find . -type f -name d?.*`: look for files inside the current directory and below with the given name that match given regular expression, `-iname` option to ignore case.
 - `find . -type f -size +200k`: look for files that have size greater than 200 kbytes, `-size -200k` for less than, `-size 100k` for equality size. 
 
+## Compression and uncompression of files (episode 33)
+#### Creation of archive files
+- `tar` command: tape archive, to group multiple files and directories into a single archive, `tar -cvf demo.tar file1 file2 dir1`, `-c` create, `-v` verbose,`-f` named file.
+- `tar -tvf demo.tar`: print table of content of the tar file.
+- `tar -xvf demo.tar`: extract the given tar file.
+
+#### Apply compression algorithm on archive files (gzip, bzip2)
+- `gzip demo.tar`: To compress a given file, `demo.tar.gz` will be created.
+- `gunzip demo.tar.gz`: To decompress a given compressed file. 
+- `bzip2` and `bunzip2` as a second alternative to compress and decompress files.
+- Archiving and compressing (`gzip`) in one command: using the `-z` option, `tar -czvf demo.tar file1 file2 dir1`
+- Decompressing (`gunzip`) and extracting the archive in one command: using the `-x` option, `tar -xvzf demo.tar.gz`
+
 
