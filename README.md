@@ -1,28 +1,28 @@
 
 # Table of Contents
-1. [Linux](https://github.com/JavaZakariae/Linux-command#Linux).
+1. [Linux](https://github.com/JavaZakariae/Linux-command##Linux).
 2. [Introduction](https://github.com/JavaZakariae/Linux-command##Introduction).
-3. [Linux Files Types](https://github.com/JavaZakariae/Linux-command##Linux_Files_Types).
+3. [Linux Files Types](https://github.com/JavaZakariae/Linux-command##Linux-Files-Types).
 4. [Terminal](https://github.com/JavaZakariae/Linux-command##Terminal)
-5. [File Navigation System](https://github.com/JavaZakariae/Linux-command##File_Navigation_System).
-6. [Linux sub-directories](https://github.com/JavaZakariae/Linux-command#)
-7. [ls command and its options](https://github.com/JavaZakariae/Linux-command#)
-8. [Creation of directories](https://github.com/JavaZakariae/Linux-command#)
-9. [Removing directories, rm and rmdir commands](https://github.com/JavaZakariae/Linux-command#)
-10.[Copying, moving and renaiming files and directories](https://github.com/JavaZakariae/Linux-command#)
-11. [Creation of files using cat, touch, gedit and vi](https://github.com/JavaZakariae/Linux-command#)
-12. [View files contents using cat, tac, rev, head and tail](https://github.com/JavaZakariae/Linux-command#)
-13. [View files content using less and more](https://github.com/JavaZakariae/Linux-command#)
-14. [Creation of hidden files and directories](https://github.com/JavaZakariae/Linux-command#)
-15. [Copying, moving and renaiming files and directories using cp and mv commands (2)](https://github.com/JavaZakariae/Linux-command#)
-16. [Comparing content of files (diff, sdiff...)](https://github.com/JavaZakariae/Linux-command#)
-17. [Soft and hard link](https://github.com/JavaZakariae/Linux-command#)
-18. [Sort commands](https://github.com/JavaZakariae/Linux-command#)
-19. [Uniq commands](https://github.com/JavaZakariae/Linux-command#)
-20. [Input and Output](https://github.com/JavaZakariae/Linux-command#)
+5. [File Navigation System](https://github.com/JavaZakariae/Linux-command##File-Navigation-System).
+6. [Linux sub-directories](https://github.com/JavaZakariae/Linux-command#Linux-sub-directories)
+7. [ls command and its options](https://github.com/JavaZakariae/Linux-command#ls-command-and-its-options)
+8. [Creation of directories](https://github.com/JavaZakariae/Linux-command#Creation-of-directories)
+9. [Removing directories, rm and rmdir commands](https://github.com/JavaZakariae/Linux-command#Removing-directories-rm-and-rmdir-commands)
+10. [Copying, moving and renaiming files and directories](https://github.com/JavaZakariae/Linux-command##Copying-moving-and-renaiming-files-and-directories)
+11. [Creation of files using cat, touch, gedit and vi](https://github.com/JavaZakariae/Linux-command##Creation-of-files-using-cat-touch-gedit-and-vi)
+12. [View files contents using cat, tac, rev, head and tail](https://github.com/JavaZakariae/Linux-command##View-files-contents-using-cat-tac-rev-head-and-tail)
+13. [View files content using less and more](https://github.com/JavaZakariae/Linux-command##View-files-content-using-less-and-more)
+14. [Creation of hidden files and directories](https://github.com/JavaZakariae/Linux-command##Creation-of-hidden-files-and-directories)
+15. [Copying, moving and renaiming files and directories using cp and mv commands (2)](https://github.com/JavaZakariae/Linux-command##Copying-moving-and-renaiming-files-and-directories-using-cp-and-mv-commands)
+16. [Comparing content of files (diff, sdiff...)](https://github.com/JavaZakariae/Linux-command##Comparing-content-of-files-(diff-sdiff-...))
+17. [Soft and hard links](https://github.com/JavaZakariae/Linux-command##Soft-and-hard-link)
+18. [Sort command](https://github.com/JavaZakariae/Linux-command##Sort-commands)
+19. [Uniq command](https://github.com/JavaZakariae/Linux-command##Uniq-command)
+20. [Input and Output](https://github.com/JavaZakariae/Linux-command##Input-and-Output)
 21. [Redirecting stdInput stdOutput and  stdError](https://github.com/JavaZakariae/Linux-command#)
-22. [Piping]  (https://github.com/JavaZakariae/Linux-command#)
-23. [Execute multiple command] (https://github.com/JavaZakariae/Linux-command#)
+22. [Piping](https://github.com/JavaZakariae/Linux-command#)
+23. [Execute multiple command](https://github.com/JavaZakariae/Linux-command#)
 24. [Commands aliasing](https://github.com/JavaZakariae/Linux-command#)
 25. [Regular expressions](https://github.com/JavaZakariae/Linux-command#)
 26. [locate](https://github.com/JavaZakariae/Linux-command#)
@@ -82,7 +82,7 @@
 - Go to the previous directory: ``` cd -```
 - ```/``` is the topmost root.
 
-## Linux sub-directories
+## Linux sub directories
 
 - bin directoery: it contains all binary executables related to our linux commands, ```which touch``` will print ```/user/bin/touch```
 - sbin directory: it means system bin, an it contains binary executables related to the super user. 
@@ -124,28 +124,28 @@
 - To create multiple directories ```mkdir -p dir1/dir2{dir3-1,dir3-2,dir3-3}/dir{1..31}```, every dir3-x will contains 31 directories.
 - Show directory content as a tree datastructure:  ```tree```
 
-## Removing directories, rm and rmdir commands
+## Removing directories rm and rmdir commands
 - To remove directories: ```rmdir dir1 dir2``` (rmdir removes only directories, no file will be deleted, and it will works only if the directories are empty).
 - To remove directories: ```rm -r dir1```, or ```rm -R dir1```. For files no need to the ```-r``` option, ```-r``` for recursive operations.
 - To get confirmation before deleting the contents: ```rm -r -i dir1```
 - Force removal ```-f```: ```rm -rf dir1```
 - Verbose option ```-v```: ```rm -rv dir1```, to print the flow of the deletion process.
 
-## Copying, moving and renaiming files and directories
+## Copying moving and renaiming files and directories
 - To copy file content from one file to another: ```cp a.txt b.txt```, if ```b.txt``` doesn't exist, a new file will be created, if it already exists, the file will be overwritten. ```cp a.txt home/anotherDirectory/c.txt``` to copy content to another destination.
 - To copy files to directories: ```cp a.txt b.txt c.txt home/anotherDirectory/d.txt```, to copy all files ```cp dir1/* dir2```
 - To copy total diretory: ```cp -r dir1 dir2```, the content of ```dir1``` will be copied to ```dir2```
 - Renaiming a file: ```mv a.txt b.txt```, to rename a directory ```mv dir1 dir2```, if ```dir2``` already exists, ```dir1``` wil be moved inside ```dir2```
 - Moving files from one directory to another: ```mv dir1/* dir2```, ```mv a.txt b.txt dir2```
 
-## Creation of files using cat, touch, gedit and vi
+## Creation of files using cat touch gedit and vi
 - Using the cat command: ```cat > a.txt```, a possibility to write content on the a.txt file, ctrl+c to save and exit, if the file is already available, the data will be overwritten, to perform append operation, ```cat >> a.txt```
 - Using the touch command: ```touch b.txt```, a new empty file will be created, if the file is already available, the data will be not be overwritten, only the last date of modification will be modified.
 - Using the gedit command: ```gedit c.txt```, ctr+s to save, ctrl+q to quit the graphical editor.
 - Using vi editor: ```gedit d.txt```, press i to enter the insert mode, press esc key, :wq to save and quit the editor. vim is an advanced version of the vi editor.
 
 
-## View files contents using cat, tac, rev, head and tail
+## View files contents using cat tac rev head and tail
 - View content using cat command:  ```cat < a.txt```, where ```<``` symbol is optional. ```-n``` option to display line numbers, ```-n``` to skip blank lines numbering. ```cat a.txt b.txt``` will print the content of the two passed files.
 - Create and add content to a file: ```cat > a.txt```, ```added content```, ```ctrl+d``` to exit the editing section.```>>``` for append operation.
 - Copy content from one file to another using cat command: ```cat a.txt >> b.txt```, using ```>``` will overwrite the content of the b.txt file. 
@@ -170,7 +170,7 @@
 - Create hiiden directories: ```mkdir .dir1```
 - Conversion of Normal/hidden files: using renaiming operation, ```mv .a.txt a.txt```
 
-## Copying, moving and renaiming files and directories using cp and mv commands (2)
+## Copying moving and renaiming files and directories using cp and mv commands (2)
 - ```cp a.txt b.txt```, if b.txt exists, its content will be ovewritten directly, to get confirmation message, ```cp -i a.txt b.txt```
 - Copy multiple files content to one destination file: ```cat a.txt b.txt > c.txt```
 - Moving and renaming files: ```mv oldname.txt newname.txt```
@@ -180,7 +180,7 @@
 - Moving using absolute path:  ```mv ~/dir1/* ~/dir2```, ```~/dir2``` equivalent to ```/home/userName/dir2```
 
 
-## Comparing content of files (diff, sdiff...)
+## Comparing content of files (diff sdiff...)
 - ```cmp``` command: comparing files byte by byte, ```cmp file1.txt file2.txt```, if the files content are the same, no output, otherwise information about the first found difference, byte number and line number will be shown.
 Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```cmp file1.txt file2.txt```, output will be ```file1.txt file2.txt differ: char 6, line 1```
 
@@ -296,7 +296,7 @@ Regular expressions.
 - `tar -tvf demo.tar`: print table of content of the tar file.
 - `tar -xvf demo.tar`: extract the given tar file.
 
-#### Apply compression algorithm on archive files (gzip, bzip2)
+#### Apply compression algorithm on archive files (gzip bzip2)
 - `gzip demo.tar`: To compress a given file, `demo.tar.gz` will be created.
 - `gunzip demo.tar.gz`: To decompress a given compressed file. 
 - `bzip2` and `bunzip2` as a second alternative to compress and decompress files.
