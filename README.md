@@ -320,3 +320,5 @@ Regular expressions.
 - `grep someword -v *`: to print the lines where the pattern is not found. 
 - `grep -w 'word1' *`: will search for the exact word, `aword100` will not be valid, only `word1` will be a correct awnser.
 - Display before, after and surrounding lines including search result: `-A` means After, `-B` means Before, `-C` means Before and After. `grep 'word1' -B3 *`
+- Search multiple contents in a file: `egrep '(word1|word2)' *`, `grep` can understand only some patterns; for this reason we use `egrep`
+  
