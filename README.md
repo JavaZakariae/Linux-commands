@@ -29,6 +29,7 @@
     - [Creation of archive files](#creation-of-archive-files)
     - [Apply compression algorithm on archive files (gzip bzip2)](#apply-compression-algorithm-on-archive-files-gzip-bzip2)
 - [grep command](#grep-command)
+- [Stackoverflow awnsers](#stackoverflow-awnsers)
 
 
 
@@ -308,12 +309,11 @@ Regular expressions.
 - Decompressing (`gunzip`) and extracting the archive in one command: using the `-x` option, `tar -xvzf demo.tar.gz`
 
 ## grep command
-
 - Globally search a regular expression and print it, global regular expression print, global regular expression parser.
 - `locate` and `find` help to find required files and directories, `grep` command help to find content within the file.
 - Syntax: `grep <pattern> filname`, and it will print all matched lines.
 - `grep someword filname1.txt filname2.txt`: look for the pattern in the given files.
-- `grep someword *`: look for the pattern in the current directory and not in the sub-directories, to ignore case we should use the `-i` option, `--color` to display the result in a colored form.
+- `grep someword *`: look for the pattern in the current directory and not in the sub-directories, to ignore case we should use the `-i` option, `--color` to display the result in a colored form. 
 - `grep someword -c *`: to print how much time the pattern is found.
 - `grep someword -n *`: to print the lines number where the pattern is found. 
 - `grep someword -l *`: to print only the file names where the pattern is found. 
@@ -321,4 +321,8 @@ Regular expressions.
 - `grep -w 'word1' *`: will search for the exact word, `aword100` will not be valid, only `word1` will be a correct awnser.
 - Display before, after and surrounding lines including search result: `-A` means After, `-B` means Before, `-C` means Before and After. `grep 'word1' -B3 *`
 - Search multiple contents in a file: `egrep '(word1|word2)' *`, `grep` can understand only some patterns; for this reason we use `egrep`
-  
+- `grep -o 'word1' *`: will print only matched pattern.
+- `egrep -R '(word1|word2)' *`: will execute recursivly, it means also checking the sub-directories.
+
+## Stackoverflow awnsers
+- [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
