@@ -29,6 +29,10 @@
     - [Creation of archive files](#creation-of-archive-files)
     - [Apply compression algorithm on archive files (gzip bzip2)](#apply-compression-algorithm-on-archive-files-gzip-bzip2)
 - [grep command](#grep-command)
+- [Regular expressions patterns](#regular-expressions-patterns)
+    - [Character Patterns](#character-patterns)
+    - [Word Patterns](#word-patterns)
+    - [Line Patterns](#line-patterns)
 - [Stackoverflow awnsers](#stackoverflow-awnsers)
 
 
@@ -42,9 +46,9 @@
 - Switch from root to simple user:  `exit`
 
 ## Introduction
-* How many users are logged in: `who`
-* Who is the current user: `whoami`
-* Print the date: `date`
+- How many users are logged in: `who`
+- Who is the current user: `whoami`
+- Print the date: `date`
 - Show calendar: `cal`
 - Print working directory: `pwd`
 - Print files and directory of the current directory: `ls`
@@ -323,6 +327,32 @@ Regular expressions.
 - Search multiple contents in a file: `egrep '(word1|word2)' *`, `grep` can understand only some patterns; for this reason we use `egrep`
 - `grep -o 'word1' *`: will print only matched pattern.
 - `egrep -R '(word1|word2)' *`: will execute recursivly, it means also checking the sub-directories.
+
+## Regular expressions patterns
+#### Character Patterns
+- `grep  'd*' *`: display all lines which contains d followed by any number of characters.
+- `grep  'c[aei]b' *`: all lines wich contains `cab`, `ceb` or `cib`
+- `grep  'b..x' *`: `.` means any character, it will search for all 4 letter words beginning with b and ending by x.  
+
+#### Word Patterns
+- `grep 'linux' demo.txt`: display all lines which contains the word `linux`, for example linuxworld will be valid.
+- `grep '\<linux\>' demo.txt`: display all lines which contains exactly `linux`, so linuxworld is invalid.
+- `grep '\<linux' demo.txt`: display all lines which starts with `linux`.
+- `grep 'linux\>' demo.txt`: display all lines which ends with `linux`.
+  
+#### Line Patterns
+- `^`: line starts with, `grep '^d' demo.txt` will print all lines that start with `d`.
+- `$`: line ends with.
+- `\<the\>`: lines that start exactly with the word `the`
+- `^[aeiu]`: lines that start with `a`, `e`, `i` or `u`
+- `^[^aeiu]`: lines that do not start with `a`, `e`, `i` or `u`
+- `^....$`: lines that contains only 4 charachters.
+- `^\.`: lines that starts with the `.` symbol.
+- `^$`: blank lines, to remove blank lines, `grep '^$' file.txt > temp.txt`, `mv temp.txt file.txt`.
+
+
+
+
 
 ## Stackoverflow awnsers
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
