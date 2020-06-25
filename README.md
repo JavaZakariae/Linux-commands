@@ -33,6 +33,7 @@
     - [Character Patterns](#character-patterns)
     - [Word Patterns](#word-patterns)
     - [Line Patterns](#line-patterns)
+    - [Additional Patterns available only when using the egrep command](#additional-patterns-available-only-when-using-the-egrep-command)
 - [Stackoverflow awnsers](#stackoverflow-awnsers)
 
 
@@ -350,8 +351,10 @@ Regular expressions.
 - `^\.`: lines that starts with the `.` symbol.
 - `^$`: blank lines, to remove blank lines, `grep '^$' file.txt > temp.txt`, `mv temp.txt file.txt`.
 
-
-
+#### Additional Patterns available only when using the egrep command
+- `|`: it matches any of the passed string, `egrep '(linux|java|docker)' *`.
+- `{m}`: it matches exactly m occurences of the preceiding character.  `egrep '[0-9]{10}' *` will match every 10-digit mobile numbers.
+- `{m, n}`: it matches minimum m occurences and maximum occurences of the preceiding character.  `egrep '[0-9]{8, 10}' *` will match every 8-digit, 9-digit and 10-digit mobile numbers. `{m, }` means no restriction for the maximum occurences. 
 
 
 ## Stackoverflow awnsers
