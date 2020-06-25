@@ -24,7 +24,7 @@
 - [Commands aliasing](#commands-aliasing)
 - [Regular expressions](#regular-expressions)
 - [locate](#locate)
-- [find command (episode 31)](#find-command-episode-31)
+- [find command](#find-command)
 - [Compression and uncompression of files (episode 33)](#compression-and-uncompression-of-files-episode-33)
     - [Creation of archive files](#creation-of-archive-files)
     - [Apply compression algorithm on archive files (gzip bzip2)](#apply-compression-algorithm-on-archive-files-gzip-bzip2)
@@ -34,6 +34,7 @@
     - [Word Patterns](#word-patterns)
     - [Line Patterns](#line-patterns)
     - [Additional Patterns available only when using the egrep command](#additional-patterns-available-only-when-using-the-egrep-command)
+- [The cut command](#the-cut-command)
 - [Stackoverflow awnsers](#stackoverflow-awnsers)
 
 
@@ -288,7 +289,7 @@ Regular expressions.
 - `locate --existing b.jpeg`, or with `-e` option: check if the gievn file exist or not.
 - Advantage of using a database is related to performance.
 
-## find command (episode 31)
+## find command
 - It provides more search option comparing to the locate command. contrary to the locate command, the find command will search directly in the file system.
 - We can search only files, only directories, search by name, search by size...
 - `find`: by default, it will look for all files and directories from the current directory and below in the linux file system.
@@ -355,6 +356,13 @@ Regular expressions.
 - `|`: it matches any of the passed string, `egrep '(linux|java|docker)' *`.
 - `{m}`: it matches exactly m occurences of the preceiding character.  `egrep '[0-9]{10}' *` will match every 10-digit mobile numbers.
 - `{m, n}`: it matches minimum m occurences and maximum occurences of the preceiding character.  `egrep '[0-9]{8, 10}' *` will match every 8-digit, 9-digit and 10-digit mobile numbers. `{m, }` means no restriction for the maximum occurences. 
+
+## The cut command
+- we use the cut command to extract specific data from files, the file can be either normal or tabular.
+- `cut -c 9 emp.dat`: print the `9th` character in each line.
+- `cut -c 3-5 emp.dat`: print the `3th`, `4th`, `5th` character in each line, `-c 3-` the 3th to the last character, `-c -3` will print the `3` first characters by each line.
+- `cut -c 3-5 7-9 emp.dat`: will display the `3th`, `4th`, `5th` characters and also the `7th`, `8th` and `9th`
+- Display content based on delimiter: `name|username|password`, to print the second column we can use `cut -d "|" -f 3 tabularfile`, `d` option for delimiter and `f` for field, `-f 1-3` to get the columns 1, 2 and 3, `-f -2` to get up to the second column, `-f 1, 3` to get only the first and third column, to get all columns execpt the third column, we can use  `cut -d "|" --complement -f 3 tabularfile`
 
 
 ## Stackoverflow awnsers
