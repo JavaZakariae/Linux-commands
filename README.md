@@ -35,7 +35,11 @@
     - [Line Patterns](#line-patterns)
     - [Additional Patterns available only when using the egrep command](#additional-patterns-available-only-when-using-the-egrep-command)
 - [The cut command](#the-cut-command)
-- [Stackoverflow awnsers](#stackoverflow-awnsers)
+- [The Linux File Permissions Concept (42)](#the-linux-file-permissions-concept-42)
+    - [User categories](#user-categories)
+    - [Permission types](#permission-types)
+    - [Operations allowed related permissions](#operations-allowed-related-permissions)
+- [Stackoverflow questions](#stackoverflow-questions)
 
 
 
@@ -364,6 +368,38 @@ Regular expressions.
 - `cut -c 3-5 7-9 emp.dat`: will display the `3th`, `4th`, `5th` characters and also the `7th`, `8th` and `9th`
 - Display content based on delimiter: `name|username|password`, to print the second column we can use `cut -d "|" -f 3 tabularfile`, `d` option for delimiter and `f` for field, `-f 1-3` to get the columns 1, 2 and 3, `-f -2` to get up to the second column, `-f 1, 3` to get only the first and third column, to get all columns execpt the third column, we can use  `cut -d "|" --complement -f 3 tabularfile`
 
+## The Linux File Permissions Concept (42)
+ File persmmisions describe the allowed operations by various users.
+  - User categories.
+  - Permission types.
+  - Operations allowed related permissions.  
 
-## Stackoverflow awnsers
+#### User categories
+- All users are divided into `4` types:
+  - User/owner: represented by `u`, the user who created the file.
+  - Group: represented by `g`.
+  - Others: represented by `o`.
+  - All: represented by `a`.  
+
+#### Permission types
+- `r`: Read, on files we can view the content, on directories we can view the content of the directorties; for example `ls` command.
+- `w`: Write, on files we can edit the content of files, on directories we can create and delete files.
+- `x`: Execute, on files we can execute the file just like a program, on directories we can enter into a directory; for example using `cd` command.
+- `-`: No permission.
+- By default, the owner of the file get only read and write permissions. 
+- Without execute permission, read and write permissions on directories are useless.
+
+#### Operations allowed related permissions
+- `+`: add a partcular permission to a `user|group|others|all`.
+- `-`: remove a partcular permission from a `user|group|others|all`.
+- `-`: assign a set of permissions to a `user|group|others|all`.
+- `chmod` command: 
+  - It means change mode. we can use it to change files or directories permission.
+  - Syntax: `chmod <user_category><permission>`, example: `chmod u+x script.sh`, gives execute permission to the owner on the given file.
+  - `chmod u+x,g+w,o-r demo.txt`: gives the owner execute permission, gives write permission to the group and remove read permission from others.
+  - `chmod u=rw,g=rw,o=r demo.txt`: we assing read and write permission to the owner and the group, the read opertion to others.
+  -  `chmod a=- demo.txt`: we retrieve all permissions from all.
+  -  `chmod a=rwx demo.txt`: we give all permissions to all.
+
+## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
