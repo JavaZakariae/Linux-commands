@@ -39,6 +39,7 @@
     - [User categories](#user-categories)
     - [Permission types](#permission-types)
     - [Operations allowed related permissions](#operations-allowed-related-permissions)
+    - [Users and groups](#users-and-groups)
 - [Stackoverflow questions](#stackoverflow-questions)
 
 
@@ -401,5 +402,11 @@ Regular expressions.
   -  `chmod a=- demo.txt`: we retrieve all permissions from all.
   -  `chmod a=rwx demo.txt`: we give all permissions to all.
 
+#### Users and groups
+  -  `sudo addgroup coursegroup`: to create a group with name `coursegroup`, we can check if the group was added by checking the following file `etc/group`.
+  -  `sudo adduser --ingroup coursegroup user1`: to create a new user in the group `coursegroup`. We can check if the user was succefuly added by checking the following file `etc/passwd`.
+-  `sudo adduser user2`: when executing this command, a new user will be created `user2`, a group with the same name will also be created, and the new user will be added to that `group`.
+-  `su - user1`: change current linux user to `user1`.
+  
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
