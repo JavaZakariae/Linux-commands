@@ -1,5 +1,5 @@
 ## Introduction
-This repository contains my personal notes on [linux command with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the linux operting system, but it can be very useful as a reminder of how a specific linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming. 
+This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the linux operting system, but it can be very useful as a reminder of how a specific linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming. 
 
 - [Introduction](#introduction)
 - [Linux](#linux)
@@ -388,6 +388,7 @@ Regular expressions.
 - By default, the owner of the file get only read and write permissions. 
 - Without execute permission, read and write permissions on directories are useless.
 
+
 #### Operations allowed related permissions
 - `+`: add a partcular permission to a `user|group|others|all`.
 - `-`: remove a partcular permission from a `user|group|others|all`.
@@ -397,8 +398,22 @@ Regular expressions.
   - Syntax: `chmod <user_category><permission>`, example: `chmod u+x script.sh`, gives execute permission to the owner on the given file.
   - `chmod u+x,g+w,o-r demo.txt`: gives the owner execute permission, gives write permission to the group and remove read permission from others.
   - `chmod u=rw,g=rw,o=r demo.txt`: we assing read and write permission to the owner and the group, the read opertion to others.
-  -  `chmod a=- demo.txt`: we retrieve all permissions from all.
-  -  `chmod a=rwx demo.txt`: we give all permissions to all.
+  - `chmod a=- demo.txt`: we retrieve all permissions from all.
+  - `chmod a=rwx demo.txt`: we give all permissions to all.
+  - `r, w, x` are symbolic permissions, we can also specify permissions by using octal numbers.
+    - `0`: `000` means No permission.
+    - `1`: `001` means only execute permission.
+    - `2`: `010` means only write permission.
+    - `3`: `011` means write and execute permission.
+    - `4`: `100` means only read permission.
+    - `5`: `101` means only read and execute permission.
+    - `6`: `110` means only read and write permission.
+    - `7`: `111` means read, write and execute permission.
+    - Note that `4` means read permmision, `2` means write and `1` means execute.
+    - Example:
+      - `chmod u=rw,g=wx,o=w demo.txt` could be also written as `chmod 632 demo.txt`.
+      - `chmod 77 demo.txt`: is the same thing as `chmod 077 demo.txt`.
+      - `chmod demo.txt` is not allowed.
 
 #### Users and groups
   -  `sudo addgroup coursegroup`: to create a group with name `coursegroup`, we can check if the group was added by checking the following file `etc/group`.
