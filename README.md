@@ -1,5 +1,8 @@
-- [Linux](#linux)
+## Introduction
+This repository contains my personal notes on [linux command with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the linux operting system, but it can be very useful as a reminder of how a specific linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming. 
+
 - [Introduction](#introduction)
+- [Linux](#linux)
 - [Linux Files Types](#linux-files-types)
 - [Terminal](#terminal)
 - [File Navigation System](#file-navigation-system)
@@ -43,16 +46,11 @@
 - [Stackoverflow questions](#stackoverflow-questions)
 
 
-
-
-
 ## Linux
 - Simple user: `$ prompt`
 - Root user/admin: `# prompt`
 - Switch from simple user to root user: `sudo -i`
 - Switch from root to simple user:  `exit`
-
-## Introduction
 - How many users are logged in: `who`
 - Who is the current user: `whoami`
 - Print the date: `date`
