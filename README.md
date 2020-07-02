@@ -43,6 +43,7 @@ This repository contains my personal notes on the [linux commands with shell pro
     - [Permission types](#permission-types)
     - [Operations allowed related permissions](#operations-allowed-related-permissions)
     - [Users and groups](#users-and-groups)
+    - [Umask](#umask)
 - [Stackoverflow questions](#stackoverflow-questions)
 
 
@@ -418,8 +419,21 @@ Regular expressions.
 #### Users and groups
   -  `sudo addgroup coursegroup`: to create a group with name `coursegroup`, we can check if the group was added by checking the following file `etc/group`.
   -  `sudo adduser --ingroup coursegroup user1`: to create a new user in the group `coursegroup`. We can check if the user was succefuly added by checking the following file `etc/passwd`.
--  `sudo adduser user2`: when executing this command, a new user will be created `user2`, a group with the same name will also be created, and the new user will be added to that `group`.
--  `su - user1`: change current linux user to `user1`.
+  -  `sudo adduser user2`: when executing this command, a new user will be created `user2`, a group with the same name will also be created, and the new user will be added to that `group`.
+  -  `su - user1`: change current linux user to `user1`.
   
+#### Umask
+  - umask means user mask. Based on the umask value, default permissions will be there for files and directories. The default umask value is `022`.  
+  - Default permissions for files: `666`- umask value, `666`-`022`=`644`, it means read and write for the user, read for the group and the others. 
+  - Default permissions for directories: `777`- umask value, `755`-`022`=`644`, it means read, write and execute for the user, read and execute for the group and the others.
+  - To congigure ou own umask value, by using the umask command: `umask 002`.
+  - Se case:
+    - For newly created files, default permission should be `444`, what should be the mask value: `444=666-umask=222`. 
+    - The most used umask values are:
+      - `022`: `644` on files means read and write for the user, read for the group and others.
+      - `002`: `664` on files means read and write for the user and the group, read for the others.
+      - `077`: `600` on files means read for the user, nothing for the group and others.
+      - `007`: `660` on files means read and write for the user and the group, nothing for others.
+   
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
