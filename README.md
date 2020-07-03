@@ -2,7 +2,7 @@
 This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the linux operting system, but it can be very useful as a reminder of how a specific linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming. 
 
 - [Introduction](#introduction)
-- [Linux](#linux)
+- [Useful Linux commands](#useful-linux-commands)
 - [Linux Files Types](#linux-files-types)
 - [Terminal](#terminal)
 - [File Navigation System](#file-navigation-system)
@@ -44,10 +44,11 @@ This repository contains my personal notes on the [linux commands with shell pro
     - [Operations allowed related permissions](#operations-allowed-related-permissions)
     - [Users and groups](#users-and-groups)
     - [Umask](#umask)
+- [Working with editors](#working-with-editors)
 - [Stackoverflow questions](#stackoverflow-questions)
 
 
-## Linux
+## Useful Linux commands
 - Simple user: `$ prompt`
 - Root user/admin: `# prompt`
 - Switch from simple user to root user: `sudo -i`
@@ -434,6 +435,43 @@ Regular expressions.
       - `002`: `664` on files means read and write for the user and the group, read for the others.
       - `077`: `600` on files means read for the user, nothing for the group and others.
       - `007`: `660` on files means read and write for the user and the group, nothing for others.
-   
+
+## Working with editors
+  - There are multiple editors: graphical editor (gedit), vi editor, nano editor... 
+  - gedit: same as windows note pad.
+    - `gedit file1.txt`: if the file exist already, it will be opened for editing, otherwise a new file will be created and opened for editing. Note that `gedit` can work only on the desktop version.
+  - `vi` or `visual editor`: it is a unix based editor, on the contrary to gedit and nano that are linux based. We can use it to create new files and to edit the contrent of the existing ones.
+    - `vi file2.txt`: if the file exist already, it will be opened for editing, otherwise a new file will be created and opened for editing.
+    - To save the file: `:wq` (w means write, q means quit).
+    - There are `3` mode of `vi`:
+      - `Command mode`: It is the default mode, in this mode you can use any `vi` command, from command mode we can enter into insert mode by using multiple ways, for example we can use `i`. To enter into exit mode we press `:` key.
+      - `Insert mode`: In this mode we can insert/modify/append data, to return to the command mode we can press `Esc` key.
+      - `Exit mode`: In this mode we can exit the `vi` editor.
+    - How to insert/append data when we are in the command mode, we can press the following keys:
+      - `A`: To append data at the end of the line.
+      - `I`: To isert data at the beginning of the line.
+      - `a`: To append data to the right side of the cursor position (just after the cursor position).
+      - `i`: To insert data to the left side of the cursor position (just before the cursor position).
+    - To delete data when we are in the command mode, we can press the following keys:
+      - Delete characters and words:
+        - `x`: To delete the current character.
+        - `nx`: To delete the n characters starting from the current position.
+        - `X`: To delete the previous charachter.
+        - `nX`: To delete the n previous charachters.
+        - `dw`: To delete the current word.
+        - `ndw`: To delete the n words starting from the current position.
+      - Delete lines:
+        - `dd`: To delete the current line.
+        - `ndd`: To delete n lines.
+        - `d$`: To delete from the current position to the end of line.
+        - `d^`: To delete from the beginning to the current position.
+        - `dgg`: To delete from the beginning of the file to the current position.
+        - `dG`: To delete from the current position to the end of the file.
+    - To replace data when we are in the command mode, we can press the following keys: 
+      - `r`: To replace the current character.
+      - `R`: To replace multiple charatcers from the current position.
+      - `S` or `cc`: To replace a line.
+      - `O`: To open a new line above te cursor position.
+      - `o`: To open a new line below te cursor position.
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
