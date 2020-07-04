@@ -1,5 +1,5 @@
 ## Introduction
-This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the linux operting system, but it can be very useful as a reminder of how a specific linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming. 
+This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the Linux operating system, but it can be very useful as a reminder of how a specific Linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming (not yet). 
 
 - [Introduction](#introduction)
 - [Useful Linux commands](#useful-linux-commands)
@@ -49,10 +49,6 @@ This repository contains my personal notes on the [linux commands with shell pro
 
 
 ## Useful Linux commands
-- Simple user: `$ prompt`
-- Root user/admin: `# prompt`
-- Switch from simple user to root user: `sudo -i`
-- Switch from root to simple user:  `exit`
 - How many users are logged in: `who`
 - Who is the current user: `whoami`
 - Print the date: `date`
@@ -74,37 +70,41 @@ This repository contains my personal notes on the [linux commands with shell pro
 - Increase the font size: `Ctrl, shift and +`
 - Print 5 random numbers between 1 and 100: `shuf -i 1-100 -n 5`
 - Creating file using the `shuf` command: `touch dir$(shuf -i 1-10 -n 1)/sunny.txt `
+- Simple user: `$ prompt`
+- Root user/admin: `# prompt`
+- Switch from simple user to root user: `sudo -i`
+- Switch from root to simple user:  `exit`
 
 ## Linux Files Types
 - Directory file.
 - Normal file [binary, text].
 - Device file : every device is represented as a file.
-- Show type of file: ```file file.txt```
+- To show the type of a file: ```file file.txt```
 - Linux read files based on their content and not based on their extensions.
 
 
 ## Terminal
-- Open the terminal: ```ctrl+alt+t```
-- Close the terminal: ```ctral+d```
-- Show the file that represent the current terminal: ```ttl``` ---> ```/dev/pts/0```
-- Show files: ```ls -l``` ```-l```  means long listing.
+- Open the terminal: `ctrl+alt+t`
+- Close the terminal: `ctrl+d`
+- Show the file that represent the current terminal: `ttl` ---> `/dev/pts/0`
+- Show files: `ls -l` `-l`  means long listing.
 
 
 ## File Navigation System
 
-- Display hidden files: ```ls -a```  ```-a``` means all.
-- Home directory: ```/home/user1```, ```/home``` contains the home users directories.
-- Go directly to the home directory: ```cd ``` or ```cd ~ ```
-- Go to the previous directory: ``` cd -```
-- ```/``` is the topmost root.
+- Display hidden files: `ls -a`  `-a` means all.
+- Home directory: `/home/user1`, `/home` contains the home users directories.
+- Go directly to the home directory: `cd` or `cd ~`
+- Go to the previous directory: `cd -`
+- `/` is the topmost root.
 
 ## Linux sub directories
 
-- bin directoery: it contains all binary executables related to our linux commands, ```which touch``` will print ```/user/bin/touch```
+- bin directoery: it contains all binary executables related to our linux commands, `which touch` will print `/user/bin/touch`
 - sbin directory: it means system bin, an it contains binary executables related to the super user. 
-- etc directory: it contains system configuration informations required by the operationg system, for example the passwords of the users ```/etc/passwd```, groups info ```/etc/group``` and hosts info ```/etc/hosts```(ip addresses and dns names).
-- tmp directory: ```tmp``` means temporary, if any file or directory is required temporary, it is created under the tmp folder in the current session. the content of the directory will be deleted automatically after the shutdown.
-- dev directory: ```dev``` means device, all the device related files will be stored in this directory, using those files, we can communicate with the device, tty file for terminal related files, hd for harde drive file ...
+- etc directory: it contains system configuration informations required by the operationg system, for example the passwords of the users `/etc/passwd`, groups info `/etc/group` and hosts info `/etc/hosts`(ip addresses and dns names).
+- tmp directory: `tmp` means temporary, if any file or directory is required temporary, it is created under the tmp folder in the current session. the content of the directory will be deleted automatically after the shutdown.
+- dev directory: `dev` means device, all the device related files will be stored in this directory, using those files, we can communicate with the device, tty file for terminal related files, hd for harde drive file ...
 - mnt directory, media directory(for mounting).
 - opt directory: opt means optional, it contains all the 3rd part software installaion files.
 - lib directory: lib means libraries, which are required by applications.
@@ -117,35 +117,35 @@ This repository contains my personal notes on the [linux commands with shell pro
 
 ## ls command and its options
 
-- List all files and directories of the directory dir1: ```ls dir1```
-- List all files and directories of the current directory: ```ls```
-- List content in reverse alphabetical order: ```ls -r```
-- List content in a long format(more details on the content): ```ls -l```
-- List content based on creation time: ```ls -t```.
-- Possibilioty to combine all the above options: ```ls -ltr```
-- List also the hidden files: ```ls -a```
-- List contents by type: ```ls -F``` (/, *, @)
-- List contents recursively: ```ls -R```
-- List contents with total size(1 block = 1024kb): ```ls -s```
-- List contents of the top 10 entries: ```ls -l /dir | head```
-- List contents of the top 5 entries: ```ls -l /dir | head -5```
-- List contents of the bottom 10 entries: ```ls -l /dir | tail```
-- List contents page by page: ```ls -l /dir | more``` or ```ls -l /dir | less```, less is more powerful(forward and backword direction).
+- List all files and directories of the directory dir1: `ls dir1`
+- List all files and directories of the current directory: `ls`
+- List content in reverse alphabetical order: `ls -r`
+- List content in a long format(more details on the content): `ls -l`
+- List content based on creation time: `ls -t`
+- Possibilioty to combine all the above options: `ls -ltr`
+- List also the hidden files: `ls -a`
+- List contents by type: `ls -F` (/, *, @)
+- List contents recursively: `ls -R`
+- List contents with total size(1 block = 1024kb): `ls -s`
+- List contents of the top 10 entries: `ls -l /dir | head`
+- List contents of the top 5 entries: `ls -l /dir | head -5`
+- List contents of the bottom 10 entries: `ls -l /dir | tail`
+- List contents page by page: `ls -l /dir | more` or `ls -l /dir | less`, less is more powerful(forward and backword direction).
 
 ## Creation of directories
 
-- To create a directory in the same pwd: ```mkdir directoryName```
-- To create multiple directories in the same pwd: ```mkdir dir1 dir2 dir3```
-- To create multiple directories from the same pwd: ```mkdir -p dir1/dir2/dir3```. ```dir1, dir2``` will be created only if they don't exist already.
-- To create multiple directories ```mkdir -p dir1/dir2{dir3-1,dir3-2,dir3-3}/dir{1..31}```, every dir3-x will contains 31 directories.
-- Show directory content as a tree datastructure:  ```tree```
+- To create a directory in the same pwd: `mkdir directoryName`
+- To create multiple directories in the same pwd: `mkdir dir1 dir2 dir3`
+- To create multiple directories from the same pwd: `mkdir -p dir1/dir2/dir3`. `dir1, dir2` will be created only if they don't exist already.
+- To create multiple directories `mkdir -p dir1/dir2{dir3-1,dir3-2,dir3-3}/dir{1..31}`, every dir3-x will contains 31 directories.
+- Show directory content as a tree datastructure:  `tree`
 
 ## Removing directories rm and rmdir commands
-- To remove directories: ```rmdir dir1 dir2``` (rmdir removes only directories, no file will be deleted, and it will works only if the directories are empty).
-- To remove directories: ```rm -r dir1```, or ```rm -R dir1```. For files no need to the ```-r``` option, ```-r``` for recursive operations.
-- To get confirmation before deleting the contents: ```rm -r -i dir1```
-- Force removal ```-f```: ```rm -rf dir1```
-- Verbose option ```-v```: ```rm -rv dir1```, to print the flow of the deletion process.
+- To remove directories: `rmdir dir1 dir2` (rmdir removes only directories, no file will be deleted, and it will works only if the directories are empty).
+- To remove directories: `rm -r dir1`, or `rm -R dir1`. For files no need to the `-r` option, `-r` for recursive operations.
+- To get confirmation before deleting the contents: `rm -r -i dir1`
+- Force removal `-f`: `rm -rf dir1`
+- Verbose option `-v`: `rm -rv dir1`, to print the flow of the deletion process.
 
 ## Copying moving and renaiming files and directories
 - To copy file content from one file to another: ```cp a.txt b.txt```, if ```b.txt``` doesn't exist, a new file will be created, if it already exists, the file will be overwritten. ```cp a.txt home/anotherDirectory/c.txt``` to copy content to another destination.
