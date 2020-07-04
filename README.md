@@ -446,7 +446,7 @@ Regular expressions.
     - There are `3` mode of `vi`:
       - `Command mode`: It is the default mode, in this mode you can use any `vi` command, from command mode we can enter into insert mode by using multiple ways, for example we can use `i`. To enter into exit mode we press `:` key.
       - `Insert mode`: In this mode we can insert/modify/append data, to return to the command mode we can press `Esc` key.
-      - `Exit mode`: In this mode we can exit the `vi` editor.
+      - `Exit mode`: To insert the exit mode from the command mode, we press `:`, in this mode we can exit the `vi` editor. To return to the command mode we press `Esc`
     - How to insert/append data when we are in the command mode, we can press the following keys:
       - `A`: To append data at the end of the line.
       - `I`: To isert data at the beginning of the line.
@@ -473,5 +473,46 @@ Regular expressions.
       - `S` or `cc`: To replace a line.
       - `O`: To open a new line above te cursor position.
       - `o`: To open a new line below te cursor position.
+    - To copy/paste data when we are in the command mode, we can press the following keys:
+      - `yy`: To copy one line, `y` for yanking.
+      - `nyy`: To copy n lines.
+      - `yw`: To copy a word.
+      - `nyw`: To copy n words.
+      - `y$`: To copy from current cursor to the end of line.
+      - `y^`: To copy from the beginning of the line to the cursor position.
+      - `p`: small p, To paste below the cursor position.
+      - `P`: cpaital P, To paste above the cursor position.
+    - Navigation when we are in the command mode:
+      - `k`: up.
+      - `j`: bottom.
+      - `l`: right.
+      - `h`: left.
+      - Arrow keys can replace the above keys.
+      - `$`: go to the end of the current line.
+      - `^`: go to the beginning of the current line.
+      - `H`: go to the beginning of the current page.
+      - `M`: go to the middle of the current page.
+      - `L`: go to the end of the current page.
+      - `b`: backword, back to the beginning of the word.
+      - `nb`: back to the beginning of the nth word.
+      - `e`: end of the currentrword.
+      - `ne`: end of the third word.
+      - `w`: forward, forwarding to the beginning of the next word.
+      - `nw`: forward, forwarding to the beginning of the nth next word.
+      - `G`: move to the last line.
+      - `ctrl+f`: page down.
+      - `ctrl+b`: page up.
+      - `u`: undo operatio, to undo the previous operation.
+    - Exit mode commands:
+      - `:w`: save file data.
+      - `:wq`: save file data and quit from the editor.
+      - `:q`: quit from the editor.
+      - `:q!`: ignore changes and quit from the editor.
+      - `:set nu`: set line numbers on the editor.
+      - `:set nonu`: to remove line numbers from the editor.
+      - `:n`: place the cursor to the nth line.
+      - `:$`: place the cursor to the laste line.
+      - `:!<unix_command>`: to execute any unix command, `:!ls`, `:!date`, ...
+   
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
