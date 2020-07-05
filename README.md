@@ -1,53 +1,57 @@
 ## Introduction
 This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the Linux operating system, but it can be very useful as a reminder of how a specific Linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming (not yet). 
 
-- [Introduction](#introduction)
-- [Useful Linux commands](#useful-linux-commands)
-- [Linux Files Types](#linux-files-types)
-- [Terminal](#terminal)
-- [File Navigation System](#file-navigation-system)
-- [Linux sub directories](#linux-sub-directories)
-- [ls command and its options](#ls-command-and-its-options)
-- [Creation of directories](#creation-of-directories)
-- [Removing directories rm and rmdir commands](#removing-directories-rm-and-rmdir-commands)
-- [Copying moving and renaiming files and directories](#copying-moving-and-renaiming-files-and-directories)
-- [Creation of files using cat touch gedit and vi](#creation-of-files-using-cat-touch-gedit-and-vi)
-- [View files contents using cat tac rev head and tail](#view-files-contents-using-cat-tac-rev-head-and-tail)
-- [View files content using less and more](#view-files-content-using-less-and-more)
-- [Creation of hidden files and directories](#creation-of-hidden-files-and-directories)
-- [Copying moving and renaiming files and directories using cp and mv commands (2)](#copying-moving-and-renaiming-files-and-directories-using-cp-and-mv-commands-2)
-- [Comparing content of files (diff sdiff...)](#comparing-content-of-files-diff-sdiff)
-- [Soft and hard link](#soft-and-hard-link)
-- [Sort commands](#sort-commands)
-- [Uniq commands](#uniq-commands)
-- [Input and Output](#input-and-output)
-- [Redirecting stdInput stdOutput and  stdError](#redirecting-stdinput-stdoutput-and-stderror)
-- [Piping](#piping)
-- [Execute multiple command](#execute-multiple-command)
-- [Commands aliasing](#commands-aliasing)
-- [Regular expressions](#regular-expressions)
-- [locate](#locate)
-- [find command](#find-command)
-- [Compression and uncompression of files (episode 33)](#compression-and-uncompression-of-files-episode-33)
-    - [Creation of archive files](#creation-of-archive-files)
-    - [Apply compression algorithm on archive files (gzip bzip2)](#apply-compression-algorithm-on-archive-files-gzip-bzip2)
-- [grep command](#grep-command)
-- [Regular expressions patterns](#regular-expressions-patterns)
-    - [Character Patterns](#character-patterns)
-    - [Word Patterns](#word-patterns)
-    - [Line Patterns](#line-patterns)
-    - [Additional Patterns available only when using the egrep command](#additional-patterns-available-only-when-using-the-egrep-command)
-- [The cut command](#the-cut-command)
-- [The Linux File Permissions Concept](#the-linux-file-permissions-concept)
-    - [User categories](#user-categories)
-    - [Permission types](#permission-types)
-    - [Operations allowed related permissions](#operations-allowed-related-permissions)
-    - [Users and groups](#users-and-groups)
-    - [Umask](#umask)
-- [Working with editors](#working-with-editors)
-- [Stackoverflow questions](#stackoverflow-questions)
+- [Linux Commands](#linux-commands)
+  - [Useful Linux commands](#useful-linux-commands)
+  - [Linux Files Types](#linux-files-types)
+  - [Terminal](#terminal)
+  - [File Navigation System](#file-navigation-system)
+  - [Linux sub directories](#linux-sub-directories)
+  - [ls command and its options](#ls-command-and-its-options)
+  - [Creation of directories](#creation-of-directories)
+  - [Removing directories rm and rmdir commands](#removing-directories-rm-and-rmdir-commands)
+  - [Copying moving and renaiming files and directories](#copying-moving-and-renaiming-files-and-directories)
+  - [Creation of files using cat touch gedit and vi](#creation-of-files-using-cat-touch-gedit-and-vi)
+  - [View files contents using cat tac rev head and tail](#view-files-contents-using-cat-tac-rev-head-and-tail)
+  - [View files content using less and more](#view-files-content-using-less-and-more)
+  - [Creation of hidden files and directories](#creation-of-hidden-files-and-directories)
+  - [Copying moving and renaiming files and directories using cp and mv commands (2)](#copying-moving-and-renaiming-files-and-directories-using-cp-and-mv-commands-2)
+  - [Comparing content of files (diff sdiff...)](#comparing-content-of-files-diff-sdiff)
+  - [Soft and hard link](#soft-and-hard-link)
+  - [Sort commands](#sort-commands)
+  - [Uniq commands](#uniq-commands)
+  - [Input and Output](#input-and-output)
+  - [Redirecting stdInput stdOutput and  stdError](#redirecting-stdinput-stdoutput-and-stderror)
+  - [Piping](#piping)
+  - [Execute multiple command](#execute-multiple-command)
+  - [Commands aliasing](#commands-aliasing)
+  - [Regular expressions](#regular-expressions)
+  - [locate](#locate)
+  - [find command](#find-command)
+  - [Compression and uncompression of files (episode 33)](#compression-and-uncompression-of-files-episode-33)
+      - [Creation of archive files](#creation-of-archive-files)
+      - [Apply compression algorithm on archive files (gzip bzip2)](#apply-compression-algorithm-on-archive-files-gzip-bzip2)
+  - [grep command](#grep-command)
+  - [Regular expressions patterns](#regular-expressions-patterns)
+      - [Character Patterns](#character-patterns)
+      - [Word Patterns](#word-patterns)
+      - [Line Patterns](#line-patterns)
+      - [Additional Patterns available only when using the egrep command](#additional-patterns-available-only-when-using-the-egrep-command)
+  - [The cut command](#the-cut-command)
+  - [The Linux File Permissions Concept](#the-linux-file-permissions-concept)
+      - [User categories](#user-categories)
+      - [Permission types](#permission-types)
+      - [Operations allowed related permissions](#operations-allowed-related-permissions)
+      - [Users and groups](#users-and-groups)
+      - [Umask](#umask)
+  - [Working with editors](#working-with-editors)
+  - [Stackoverflow questions](#stackoverflow-questions)
+- [Shell scripting](#shell-scripting)
+  - [What is Shell?](#what-is-shell)
+  - [Types of Shell?](#types-of-shell)
+  - [Writing scripts](#writing-scripts)
 
-
+# Linux Commands
 ## Useful Linux commands
 - How many users are logged in: `who`
 - Who is the current user: `whoami`
@@ -516,3 +520,19 @@ Regular expressions.
    
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
+
+# Shell scripting
+## What is Shell?
+  - Shell is responsible to read the command provided by the user.
+  - Shell will check if the command is valid or not.
+  - Shell will check if the command is properly used or not.
+  - If everything is ok, the shell will interpret that command into kernel understandable form and pass that command to the kernel. The kernel is responsible to excute that command with the help of the hardware.
+## Types of Shell?
+  - `Bourne Shell`: was developed by `Stephen Bourne`, it came with the first version of `Unix`. By using `sh` command we can access this Shell.
+  - `Bash Shell`:    Bash for Bourne Again SHell. It is an advanced version of Bourne Shell (sh), this is the default Shell for the most linux distributions, by using `bash` command, we can access this Shell.
+  - `Korn Shell`: developed by David Korn, mostly used in IBM AIX OS, by using `ksh` command, we can access this Shell.
+  - `Cshell`, `TShell`,`ZShell`, ...
+## Writing scripts
+  - To cretae a script, we can create a file named myscript.sh, we can add commands into it.
+  - To execute the script, we should give the user execute permission on the given script, and we run the script using `./myscript.sh`, note that wen executing the preceding command , the defaut shell will be executed (Bash Shell), to use `Bourne Shell` for example, we can type `sh ./myscript.sh`.
+
