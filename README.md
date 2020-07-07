@@ -49,7 +49,7 @@ This repository contains my personal notes on the [linux commands with shell pro
 - [Shell scripting](#shell-scripting)
   - [What is Shell?](#what-is-shell)
   - [Types of Shell?](#types-of-shell)
-  - [Writing scripts](#writing-scripts)
+  - [Scripts and Shell info](#scripts-and-shell-info)
 
 # Linux Commands
 ## Useful Linux commands
@@ -532,7 +532,10 @@ Regular expressions.
   - `Bash Shell`:    Bash for Bourne Again SHell. It is an advanced version of Bourne Shell (sh), this is the default Shell for the most linux distributions, by using `bash` command, we can access this Shell.
   - `Korn Shell`: developed by David Korn, mostly used in IBM AIX OS, by using `ksh` command, we can access this Shell.
   - `Cshell`, `TShell`,`ZShell`, ...
-## Writing scripts
+## Scripts and Shell info
   - To cretae a script, we can create a file named myscript.sh, we can add commands into it.
   - To execute the script, we should give the user execute permission on the given script, and we run the script using `./myscript.sh`, note that wen executing the preceding command , the defaut shell will be executed (Bash Shell), to use `Bourne Shell` for example, we can type `sh ./myscript.sh`.
-
+  - How to check default shell in our sysrtem: `echo $0`, or `echo $SHELL`, not that LINUX IS CASE SENSITIVE, we can also check for this info by checking the following file `cat /etc/paswd`; this file contains the configuration of the system users. 
+  - How to check all available shell in our system: `cat /etc/shells`
+  - To switch from one shell to another: we type `sh` to switch to the `sh` shell.
+  - What is a shell script: a sequence of commands and programming features saved in a file. the programming features like control statement, loops, ...
