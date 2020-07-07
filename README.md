@@ -539,3 +539,8 @@ Regular expressions.
   - How to check all available shell in our system: `cat /etc/shells`
   - To switch from one shell to another: we type `sh` to switch to the `sh` shell.
   - What is a shell script: a sequence of commands and programming features saved in a file. the programming features like control statement, loops, ...
+  - Executing a script using the bash shell: `/bin/bash /home/zaki/myscript.sh`, we can use directly the `bash` command if it can be found inside a location that exists in `$PATH` variables. If the `myscript.sh` file exists in the same directory as the user, we can run it with `bash ./myscript.sh` or `./myscript.sh` if the `bash` is the default Shell in the system. If we want to use the `sh` Shell, ` sh ./myscript.sh`
+  - Inside a script file, we can specify the interpreter, which is responsible to execute the script. We can do that using Sha-Bang `#!`, for example: adding `#! /bin/sh` in the first file of the script to specifiy the `sh` shell.
+  - By default, for any command or script, the OS will check locations specified by the `$PATH` varaiable. So if we add our scipt location to path variable locations, we can then run the script from anywhere just like a command.
+  - `EXPORT PATH=$PATH:/home/user/scripts`: will append the new location (`/home/user/scripts`) to the PATH variables, not that the result of this operation is temporary and available only at session level.
+  - To set the PATH permanently at a user level: we should add `EXPORT PATH=$PATH:/home/user/scripts` to the hidden file `.bashrc`, so whenever a new session begin (session means a new command line terminal opening operation), the `.bashrc` file will executed and the path will be adjusted.  
