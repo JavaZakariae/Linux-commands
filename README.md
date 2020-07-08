@@ -50,6 +50,10 @@ This repository contains my personal notes on the [linux commands with shell pro
   - [What is Shell?](#what-is-shell)
   - [Types of Shell?](#types-of-shell)
   - [Scripts and Shell info](#scripts-and-shell-info)
+  - [Variables in Shell programming](#variables-in-shell-programming)
+      - [Predifined variables (environement variables)](#predifined-variables-environement-variables)
+      - [User defined variables](#user-defined-variables)
+        - [variables name](#variables-name)
 
 # Linux Commands
 ## Useful Linux commands
@@ -543,4 +547,26 @@ Regular expressions.
   - Inside a script file, we can specify the interpreter, which is responsible to execute the script. We can do that using Sha-Bang `#!`, for example: adding `#! /bin/sh` in the first file of the script to specifiy the `sh` shell.
   - By default, for any command or script, the OS will check locations specified by the `$PATH` varaiable. So if we add our scipt location to path variable locations, we can then run the script from anywhere just like a command.
   - `EXPORT PATH=$PATH:/home/user/scripts`: will append the new location (`/home/user/scripts`) to the PATH variables, not that the result of this operation is temporary and available only at session level.
-  - To set the PATH permanently at a user level: we should add `EXPORT PATH=$PATH:/home/user/scripts` to the hidden file `.bashrc`, so whenever a new session begin (session means a new command line terminal opening operation), the `.bashrc` file will executed and the path will be adjusted.  
+  - To set the PATH permanently at a user level: we should add `EXPORT PATH=$PATH:/home/user/scripts` to the hidden file `.bashrc`, so whenever a new session begin (session means a new command line terminal opening operation), the `.bashrc` file will executed and the path will be adjusted.
+## Variables in Shell programming
+  - In Shell programming, we don't have the notion of data types, every value is text or String type.
+  - All variavbles are divided into two type:
+    - Predifined variables (environement variables).
+    - User defined variables 
+
+#### Predifined variables (environement variables)
+  - They are mostly used by the system internally, but we can use them in our script. we can get all environement variables either using `env` or `set`
+  - Demo SCRIPT usING environement variables:
+      ```
+      echo "user Name: $USER"
+      echo "USER HOME directory: $HOME"
+      ```
+#### User defined variables 
+  ##### variables name
+  - It is recommanded to use only upper case characters.
+  - If a variable name is composed by multple words, it should be separated with the `_` symbol.
+  - Should not begin with digit.
+  - We should not use special symbols: `-`, `@`, `#`, `$`, ...
+
+`readonly A`: To define a variable `A` as readonly. 
+  
