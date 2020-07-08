@@ -54,6 +54,7 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [Predifined variables (environement variables)](#predifined-variables-environement-variables)
       - [User defined variables](#user-defined-variables)
         - [variables name](#variables-name)
+      - [variable scopes](#variable-scopes)
 
 # Linux Commands
 ## Useful Linux commands
@@ -569,4 +570,13 @@ Regular expressions.
   - We should not use special symbols: `-`, `@`, `#`, `$`, ...
 
 `readonly A`: To define a variable `A` as readonly. 
-  
+
+
+#### variable scopes
+  - There are 3 scopes available for variables:
+    - Session scope.
+    - User scope.
+    - System scope.
+  - Session scope: variables declared in the terminal are said to be session scope, once we close the terminal, all those variables are gone.
+  - User scope: for each user, there is a special file `.bashrc`, variables declared inside this file are available for that user in every session. user scoped variables are not available to other users.
+  - System scope: the variables are availbe to all users of the system. To declare system scoped variable, we can declare them inside the following file `/etc/profile`. Example: `export global_variable=globalValue`, to validate the changes of the system scope variables we should restart the OS.
