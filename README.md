@@ -55,6 +55,8 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [User defined variables](#user-defined-variables)
         - [variables name](#variables-name)
       - [variable scopes](#variable-scopes)
+      - [Variable substitution](#variable-substitution)
+      - [Command substitution](#command-substitution)
 
 # Linux Commands
 ## Useful Linux commands
@@ -580,3 +582,28 @@ Regular expressions.
   - Session scope: variables declared in the terminal are said to be session scope, once we close the terminal, all those variables are gone.
   - User scope: for each user, there is a special file `.bashrc`, variables declared inside this file are available for that user in every session. user scoped variables are not available to other users.
   - System scope: the variables are availbe to all users of the system. To declare system scoped variable, we can declare them inside the following file `/etc/profile`. Example: `export global_variable=globalValue`, to validate the changes of the system scope variables we should restart the OS.
+
+#### Variable substitution
+- Accessing the value of a variable by using the $ symbol is called variable substitution.
+- Syntax: `$variableName` or `${variableName}herewecanappendsomething`
+- Example:
+  ```
+  name=zaki
+  echo $name
+  echo "${name}"
+  ```
+  Note that echo `$name` will not work as expected, and the variable substitution will not work.
+
+#### Command substitution  
+- Command substitution means execute command and substitute its result.
+- Example:
+  ```
+  currentDate=$(date)
+  echo $currentDate
+  ```
+  Or using the old way
+  ```
+  currentDate=`date`
+  echo $currentDate
+  ```
+- We use command substitution whenever we need to use the result of a linux command. Example: `echo "the current working directory is $(pwd)"` 
