@@ -57,6 +57,7 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [variable scopes](#variable-scopes)
       - [Variable substitution](#variable-substitution)
       - [Command substitution](#command-substitution)
+      - [Command Line arguments](#command-line-arguments)
 
 # Linux Commands
 ## Useful Linux commands
@@ -607,3 +608,22 @@ Regular expressions.
   echo $currentDate
   ```
 - We use command substitution whenever we need to use the result of a linux command. Example: `echo "the current working directory is $(pwd)"` 
+
+#### Command Line arguments
+- To run a specified script with arguments: `./script.sh hello world, It is friday`
+- inside the script, we can get:
+  - The numbers of arguments: `$#`
+  - The script name: `$0`
+  - The first argument: `$1`
+  - The second argument: `$2`
+  - All arguments: `$*` or `$@`.
+  - With `$@`, we get space between each two argments `$1` `$2`, with `$*` we get special character between each two characters `$1c$2`, the c is the first character in the IFS(Internal Field Separator), the default is tha space charcter.
+  - To check default IFS: `set | grep "IFS"`
+- `echo -n "APPLE" | wc -c` Vs  `echo "APPLE" | wc -c`
+- Example using variable/command substituion and a command line arguments
+ ```
+      echo "hello"
+      len=$(echo -n $1 | wc -c)
+      echo "the lengh of the given parameter is $len"
+        
+ ```
