@@ -58,6 +58,7 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [Variable substitution](#variable-substitution)
       - [Command substitution](#command-substitution)
       - [Command Line arguments](#command-line-arguments)
+      - [Read dynamic data from the user](#read-dynamic-data-from-the-user)
 
 # Linux Commands
 ## Useful Linux commands
@@ -625,5 +626,30 @@ Regular expressions.
       echo "hello"
       len=$(echo -n $1 | wc -c)
       echo "the lengh of the given parameter is $len"
-        
  ```
+
+#### Read dynamic data from the user
+- Without prompt message: `read a b`, to read two values from the user. 
+- With prompt message: 
+```
+      echo "Enter the first value"
+      read A
+      echo "Enter the second value"
+      read B
+      echo "A is $A"
+      echo "B is $B"
+ ```
+ - In place of the above code, we can use the following approach: `read -p "enter the first value:" A`, the entered value will be stored to the A variable.
+ - The `-p` for displaying message, `-s` to hide the user input. `read -s -p "enter the password value:" pass`, note that the `-s` should be provided before the `-p` option.
+ - Write a script that read a file name from the user, and remove bank lines from that file?
+  ```
+        read -p "Enter the file name:" filename
+        grep -v "^$" $filename > temp.txt
+        mv temp.txt $filename 
+  ```
+ - Write a script that read a file name from the user, and remove duplicate lines from that file?
+  ```
+        read -p "Enter the file name:" filename
+        sort -u $filename > temp.txt
+        mv temp.txt $filename 
+  ```
