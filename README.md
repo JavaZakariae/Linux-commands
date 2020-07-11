@@ -59,6 +59,8 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [Command substitution](#command-substitution)
       - [Command Line arguments](#command-line-arguments)
       - [Read dynamic data from the user](#read-dynamic-data-from-the-user)
+      - [Operators](#operators)
+      - [How to perform matematical operations](#how-to-perform-matematical-operations)
 
 # Linux Commands
 ## Useful Linux commands
@@ -653,3 +655,54 @@ Regular expressions.
         sort -u $filename > temp.txt
         mv temp.txt $filename 
   ```
+#### Operators
+  - Arithmetc operators: `+ - * / %`
+  - Relational operators (numeric comparison operators), they return boolean value:
+    - `gt`: greatet than.
+    - `ge`: greatet than or equal.
+    - `lt`: less than.
+    - `let`: less than or equal.
+    - `et`: equal to. 
+    - `gt`: Not equal to.
+  - Logical operators:
+    - `a`: Logival AND
+    - `o`: Logival OR
+    - `!`: Logival NOT
+#### How to perform matematical operations
+  - There are multiple ways to perform matematical operations.
+  - ##### By using expr keyword
+     - `sum=` `expr $a + $n`  
+     - `sum=$(expr $a + $n)`  
+     - Both the  `$` symbol and the space are mandatory.
+  
+  - ##### By using let keyword
+     - Most used approach.
+     - `let sum=$a+$b`
+     - The `$` symbol is optional, we should not put space before or after the `+` symbol.
+
+  - ##### By using (())
+     - `sum=$(($a + $n))`   
+     - Both the  `$` symbol and the space are optional.
+
+  - ##### By using []
+     - `sum=$[$a + $n]`   
+     - Both the  `$` symbol and the space are optional.
+
+  - All the above approaches will work only for integer arithmetic operations, for floating point calculations we should use the `bc` command. 
+  - `bc` command for binary calulator. From the terminal we can start using the bc command.
+  ```
+    read -p "enter the first floating number" a
+    read -p "enter the second floating number" b
+    sum=$(echo $a+$b | bc)
+    echo "the sum is $sum"
+  ```
+  - Write a script to sum read 4 given digits:
+   ```
+      echo -p "Enter any 4 digits without space" n
+      a=$(echo $n | cut -c 1)
+      b=$(echo $n | cut -c 2)
+      c=$(echo $n | cut -c 3)
+      d=$(echo $n | cut -c 4)
+      sum=$[a+b+c+d]
+      echo "the sum is $sum"
+   ```
