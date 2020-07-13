@@ -61,6 +61,8 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [Read dynamic data from the user](#read-dynamic-data-from-the-user)
       - [Operators](#operators)
       - [How to perform matematical operations](#how-to-perform-matematical-operations)
+      - [Control statements](#control-statements)
+        - [if statement](#if-statement)
 
 # Linux Commands
 ## Useful Linux commands
@@ -698,7 +700,7 @@ Regular expressions.
   ```
   - Write a script to sum read 4 given digits:
    ```
-      echo -p "Enter any 4 digits without space" n
+      read -p "Enter any 4 digits without space" n
       a=$(echo $n | cut -c 1)
       b=$(echo $n | cut -c 2)
       c=$(echo $n | cut -c 3)
@@ -706,3 +708,127 @@ Regular expressions.
       sum=$[a+b+c+d]
       echo "the sum is $sum"
    ```
+
+#### Control statements
+
+##### if statement
+- Simple if statement: 
+  - Syntax:
+    ```
+            if [ condition ]
+            then
+              action
+            fi
+    ```
+  - Example: read a name from the user
+    ```
+            read -p "enter your name :" name
+            if [ $name = "Sunny" ]
+            then
+              echo "Your name is Sunny"
+            fi
+    ```
+
+  - Note that the instruction `a=b` is an assignement and `a = b` is a comparison instruction, also the spaces between `[]` are mandatory. 
+- if else  statement: 
+  - Syntax:
+    ```
+            if [ condition ]
+            then
+              action1
+            else
+              action2
+            fi
+    ```
+  - Example: read a name from the user
+    ```
+            read -p "enter your name :" name
+            if [ $name = "Sunny" ]
+            then
+              echo "Your name is Sunny"
+            else
+              echo "Your name is not Sunny"
+            fi
+    ```
+- Nested if statement: 
+  - Syntax:
+    ```
+            if [ condition1 ]
+            then
+              if [ nestedcondition ]
+              then
+                action1
+              else
+                action2
+            else
+              action3
+            fi
+    ```
+- Ladder if statement: 
+  - Syntax:
+    ```
+            if [ condition1 ]
+            then
+              action1
+            elif [ condition2 ]
+            then
+              action2
+            elif [ condition3 ]
+            then
+              action3
+            fi
+    ```
+  - Example: read a name from the user
+    ```
+            read -p "enter your name :" name
+            if [ $name = "Sunny" ]
+            then
+              echo "Your name is Sunny"
+            elif [ $name = "Bunny" ]
+            then
+              echo "Your name is Bunny"
+            else
+              echo "Your name is unknown"
+            fi
+    ```
+- Question1: Write a script to find the greater of two numbers:
+    ```
+      read -p "Enter the first number" a
+      read -p "Enter the second number" b
+      if [ $a -gt $b ]
+      then
+        echo "the first number is greater than the second"
+      elif [ $a -lt $b ]
+      then
+        echo "the second number is greater than the first"  
+      else
+        echo "the first number is equal to the the second"  
+      fi  
+    ```
+- Question2: Write a script to find the greanter of three numbers:
+    ```
+      read -p "Enter the first number" a
+      read -p "Enter the second number" b
+      read -p "Enter the third number" c
+      if [ $a -gt $b -a $a -gt $c ]
+      then
+        echo "the first number is the biggest"
+      elif [ $b -gt $c ]
+      then
+        echo "the second number is the biggest"  
+      else
+        echo "the third number is the biggest"  
+      fi  
+    ```
+    - Note the use of the `-a` in the first condition, it perfroms the `AND` logical operation, `-o` for the logical or operation, `!` for logical not.
+
+- Question3: Write a script to find if a given number is even or not:
+    ```
+      read -p "Enter the first number" a
+      if [ $[a%2] -eq 0 ]
+      then
+        echo "Yes it is even"
+      else
+        echo "No, it is not"  
+      fi  
+    ```
