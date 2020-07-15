@@ -63,6 +63,14 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [How to perform matematical operations](#how-to-perform-matematical-operations)
       - [Control statements](#control-statements)
         - [if statement](#if-statement)
+        - [case statement](#case-statement)
+        - [while loop](#while-loop)
+        - [for loop](#for-loop)
+        - [until loop](#until-loop)
+        - [break loop](#break-loop)
+        - [continue loop](#continue-loop)
+        - [exit loop](#exit-loop)
+      - [Exit codes / Status codes](#exit-codes--status-codes)
 
 # Linux Commands
 ## Useful Linux commands
@@ -832,3 +840,12 @@ Regular expressions.
         echo "No, it is not"  
       fi  
     ```
+##### case statement
+##### while loop
+##### for loop
+##### until loop
+##### break loop
+##### continue loop
+##### exit loop
+
+#### Exit codes / Status codes
