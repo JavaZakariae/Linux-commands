@@ -72,6 +72,7 @@ This repository contains my personal notes on the [linux commands with shell pro
         - [exit loop](#exit-loop)
       - [Exit codes / Status codes](#exit-codes--status-codes)
       - [File test options](#file-test-options)
+      - [String test options](#string-test-options)
 
 # Linux Commands
 ## Useful Linux commands
@@ -916,3 +917,22 @@ Regular expressions.
         echo "they are not"
       fi
     ``` 
+#### String test options    
+- `str1 = str2` returns true if both strings are equal.
+- `str1 != str2` returns true if both strings are not equal.
+- `-z` str1 returns true if `str1` is empty.
+- `-n` str1 returns true if `str1` is not empty.
+- `str1 > str2` returns true if `str1` is alphabitically greater than `str2`.
+- `str1 < str2` returns true if `str1` is alphabitically lesser than `str2`.
+- Note that the symbol `<` is also a redirection symbol, so we should use the backslach `str1 \< str2` 
+- `[ 0 ]`, `[ 1 ]` returns true all the time.
+- Script to test if the logged user is root or not and provide 5 current rnning processes information:
+  ```
+  user=$(whoami)
+  if [ $user = "root" ]
+    echo "you are root"
+    ps -ef | head -6
+  else
+    echo "you are not root"
+  ```
+  `ps` for process status, `-e` every process, `-f` full listing.
