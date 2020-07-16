@@ -1,5 +1,5 @@
 ## Introduction
-This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the Linux operating system, but it can be very useful as a reminder of how a specific Linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming (not yet). 
+This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the Linux operating system, but it can be very useful as a reminder of how a specific Linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming (still working on it). 
 
 - [Linux Commands](#linux-commands)
   - [Useful Linux commands](#useful-linux-commands)
@@ -71,6 +71,7 @@ This repository contains my personal notes on the [linux commands with shell pro
         - [continue loop](#continue-loop)
         - [exit loop](#exit-loop)
       - [Exit codes / Status codes](#exit-codes--status-codes)
+      - [File test options](#file-test-options)
 
 # Linux Commands
 ## Useful Linux commands
@@ -849,3 +850,69 @@ Regular expressions.
 ##### exit loop
 
 #### Exit codes / Status codes
+- Every command return some value after execution, This returned value is the exit code or status code, we can find exit code by using the `$` symbol.
+- The status code value have a range between `0` and `255`, the value `0` means that the command/script executed successfuly, otherwise not.
+- Example:
+  ```
+    rm inexistentfile
+    echo $?
+  ```
+  - The above code will print `1`, as the command `rm` didn't execute successfuly.
+
+- Exit command: useful when there is a need to exit in the middle of an execution script. 
+  - Syntax: `exit status-code`
+   
+#### File test options
+- The `-e` option return true if a given file/directory exists.
+- Script to test if a file exists in the current working directory:
+   ```
+    read -p "enter file name to test" name
+    if [ -e $name ]
+      echo "exists"
+    else  
+      echo "does not exist"
+    fi  
+   ```
+- The `-f` option returns true if a given file is a regular file.
+- The `-d` option returns true if a given file is a directory.
+- The `-s` option returns true if a given file is not empty, `-s` for size.
+- The `-l` option returns true if a given file is a link file.
+- The `-b` option returns true if a given file is a block special file.
+- The `-c` option returns true if a given file is a character special file.
+- The `-r` option returns true if the current user has read permiision on the given file.
+- The `-w` option returns true if the current user has write permiision on the given file.
+- The `-x` option returns true if the current user has execute permiision on the given file.
+- The `-o` option returns true if the current user is the owner of the given file.
+- `file1 -ot file2` returns true if `file1` is oltder than `file2` (last modified time).
+- `file1 -nt file2` returns true if `file1` is newer than `file2` (last modified time).
+- The `-z` option returns true if a given string is empty.
+- Examples:
+  - Write a script to test whether a given file is regular file or directory:
+    ``` 
+    #! /bin/bash
+    read -p "enter file name to test" name
+    if [ -e $name ]
+    then
+      if [ -f $name ]
+      then
+        echo "it exists and it is a regular file"
+      elif [-d $name ]  
+        echo "it exists and it is is a directory"
+      else
+        echo "it is something else"
+      fi  
+    else
+      echo "does not exist"
+    fi  
+      ``` 
+  - Write script to comapre two files    
+    ``` 
+      read -p "enter the first file name" file1
+      read -p "enter the second file name" file2
+      result=$(cmp $file1 $file2)
+      if [ -z "$result" ] then
+        echo "they are same"
+      else  
+        echo "they are not"
+      fi
+    ``` 
