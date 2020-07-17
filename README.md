@@ -63,6 +63,9 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [How to perform matematical operations](#how-to-perform-matematical-operations)
       - [Control statements](#control-statements)
         - [if statement](#if-statement)
+        - [Exit codes / Status codes](#exit-codes--status-codes)
+        - [File test options](#file-test-options)
+        - [String test options](#string-test-options)
         - [case statement](#case-statement)
         - [while loop](#while-loop)
         - [for loop](#for-loop)
@@ -70,9 +73,6 @@ This repository contains my personal notes on the [linux commands with shell pro
         - [break loop](#break-loop)
         - [continue loop](#continue-loop)
         - [exit loop](#exit-loop)
-      - [Exit codes / Status codes](#exit-codes--status-codes)
-      - [File test options](#file-test-options)
-      - [String test options](#string-test-options)
 
 # Linux Commands
 ## Useful Linux commands
@@ -842,15 +842,7 @@ Regular expressions.
         echo "No, it is not"  
       fi  
     ```
-##### case statement
-##### while loop
-##### for loop
-##### until loop
-##### break loop
-##### continue loop
-##### exit loop
-
-#### Exit codes / Status codes
+##### Exit codes / Status codes
 - Every command return some value after execution, This returned value is the exit code or status code, we can find exit code by using the `$` symbol.
 - The status code value have a range between `0` and `255`, the value `0` means that the command/script executed successfuly, otherwise not.
 - Example:
@@ -863,7 +855,7 @@ Regular expressions.
 - Exit command: useful when there is a need to exit in the middle of an execution script. 
   - Syntax: `exit status-code`
    
-#### File test options
+##### File test options
 - The `-e` option return true if a given file/directory exists.
 - Script to test if a file exists in the current working directory:
    ```
@@ -917,7 +909,7 @@ Regular expressions.
         echo "they are not"
       fi
     ``` 
-#### String test options    
+##### String test options    
 - `str1 = str2` returns true if both strings are equal.
 - `str1 != str2` returns true if both strings are not equal.
 - `-z` str1 returns true if `str1` is empty.
@@ -936,3 +928,98 @@ Regular expressions.
     echo "you are not root"
   ```
   `ps` for process status, `-e` every process, `-f` full listing.
+
+##### case statement
+- Syntax:
+    ``` 
+      case $variable in 
+        option1)
+              action-1
+              ;;
+        option2 )
+              action-2
+              ;;
+        optionn)
+              action-n
+              ;;
+        *)
+              default action
+              ;;
+      esac         
+    ```   
+- The space in `option2 )` is optional, `;;` is used to break from the case statement, it is optional in the default option. It is recommended if you use the default statement to put it as a last step in the case statement.    
+
+- Write a script to read a digit from 0 to 5 and print its string equivalent in the console using the case statement:
+  ```
+   #! /bin/bash
+   read -p "enter any digit from 0 to 9" digit 
+   case $digit
+    0)
+      echo "zero"
+      ;;
+    1)
+      echo "one"
+      ;;
+    2)
+      echo "two"
+      ;;
+    3)
+      echo "three"
+      ;;
+    4)
+      echo "four"
+      ;;
+    5)
+      echo "five"
+      ;;
+    *)
+      echo "please enter a number between 0 and five"
+   esac   
+  ```
+  For string case statement:
+  ```
+      case $String
+        "AL")
+          echo "zero"
+          ;;
+        "BL")
+          echo "one"
+          ;;
+  ```
+  Using regular expressions:
+  ```
+      case $Character
+        [abc])
+          echo "a, b or c"
+          ;;
+        [^abc])
+          echo "any character except a and b and c"
+          ;;
+        [a-z])
+          echo "any lower case character"
+          ;;
+        [A-Z])
+          echo "any upper case character"
+          ;;
+        [a-zA-Z])
+          echo "any alphabet character"
+          ;;
+        [0-9])
+          echo "any digit from 0 to 9"
+          ;;
+        [a-zA-Z0-9])
+          echo "any alphanumeric character"
+          ;;
+        [^a-zA-Z0-9])
+          echo "any character except alphanumeric character"
+          ;;            
+  ```
+
+##### while loop
+
+##### for loop
+##### until loop
+
+##### break loop
+##### continue loop
+##### exit loop
