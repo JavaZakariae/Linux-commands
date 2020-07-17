@@ -1014,12 +1014,42 @@ Regular expressions.
           echo "any character except alphanumeric character"
           ;;            
   ```
-
 ##### while loop
+  - Syntax
+      ```    
+        while [ condition ]
+        do
+          body
+        done  
+      ```
+
+  - Write a script to print numbers from 0 to 9:
+     ``` 
+        #! /bin/bash
+        i=0   
+        while [ $i -le 9 ]
+        do
+          echo $i
+          sleep 2          
+          let i++
+        done  
+      ```
+    `let i++` could also be written as `i=$[i+1]`, `sleep 2` for sleeping two seconds.
+  - Write a script to display time every second:
+     ``` 
+      while [ true ] 
+      do
+        clear
+        echo -e "\n\n\n\n$(date +%H:%M:%S)"
+        sleep 1
+      done
+     ```  
+    The -e option to process the scape characters like `\n`, we can replace `echo -e` by `printf "\n\n\n\n$(date +%H:%M:%S)"`
+    
+    To put the cursor in some position, we can use the following command `tput cup x y` where `x` and `y` are the row and the column numbers respectivly.  
 
 ##### for loop
 ##### until loop
-
 ##### break loop
 ##### continue loop
 ##### exit loop
