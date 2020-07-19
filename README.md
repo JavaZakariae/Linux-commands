@@ -68,10 +68,9 @@ This repository contains my personal notes on the [linux commands with shell pro
         - [String test options](#string-test-options)
         - [case statement](#case-statement)
         - [while loop](#while-loop)
+        - [break and continue](#break-and-continue)
         - [for loop](#for-loop)
         - [until loop](#until-loop)
-        - [break loop](#break-loop)
-        - [continue loop](#continue-loop)
         - [exit loop](#exit-loop)
 
 # Linux Commands
@@ -1047,9 +1046,48 @@ Regular expressions.
     The -e option to process the scape characters like `\n`, we can replace `echo -e` by `printf "\n\n\n\n$(date +%H:%M:%S)"`
     
     To put the cursor in some position, we can use the following command `tput cup x y` where `x` and `y` are the row and the column numbers respectivly.  
-
+##### break and continue
+- To break the loop execution
+    ``` 
+      i=1
+      while [ $i -le 10 ] 
+      do
+        if [ $i -eq 5 ]
+        then 
+          break
+        fi  
+        clear
+        echo "$i"
+        let i++
+      done
+     ```
+- To skip the current iteration and continue for the next iteration
+    ``` 
+      i=1
+      while [ $i -le 10 ] 
+      do
+        if [ $i -eq 5 ]
+        then 
+          continue
+        fi  
+        clear
+        echo "$i"
+        let i++
+      done
+     ```  
+- Write a script to reverse a given string
+    ```  
+      read -p "please enter a String: " word
+      length=$(echo -n $word | wc -c)
+      output=""
+      while [ $length -ge 1 ]
+      do
+        lastcharcter=$(echo -n word | cut -c $length)
+        output=$output$lastcharacter
+        let length--
+      done
+      echo "the reversed character $output"  
+    ```  
 ##### for loop
 ##### until loop
-##### break loop
-##### continue loop
 ##### exit loop
