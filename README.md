@@ -1088,6 +1088,32 @@ Regular expressions.
       done
       echo "the reversed character $output"  
     ```  
+- Write a script to read a file line by line
+    ```  
+      read -p "please enter the file name: " fname
+      if [ ! -e $fname ]
+      then
+        echo "the file dosn't exist"    
+        exit 1
+      fi  
+      if [ -d $fname ]
+      then
+        echo "it is a directory, and not a file"    
+        exit 2
+      fi
+      if [ ! -s $fname ]
+      then
+        echo "it is empty"    
+        exit 3
+      fi
+      count=1
+      while read line
+      do
+        echo "   $count  $line"
+        let count++
+      done < $fname
+    ```  
+
 ##### for loop
 ##### until loop
 ##### exit loop
