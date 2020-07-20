@@ -1115,5 +1115,67 @@ Regular expressions.
     ```  
 
 ##### for loop
+  - Syntax
+     ```    
+        for variable in item1 item2 item3... itemN
+        do
+          action
+        done  
+     ```
+  - Print numbers from 1 to five
+     ```    
+        for i in 1 2 3 4 5
+        do
+          echo "$i"
+        done  
+     ```
+  - Print every number from 1 to 100 that is divisible by 10
+     ```    
+        for i in {1..100}
+        do
+          if [ $[i%10] -eq 0 ]
+          then
+            echo "$i"
+          fi  
+        done  
+     ``` 
+  - Display all file names present in the current working directory
+    ```
+      #! /bin/bash
+      for fname in *
+      do
+        if [ -f $fname ]
+        then
+          echo "$fname"
+        fi  
+      done
+    ```
+  - Diplay the command line arguments passed to the script 
+    ```
+      #! /bin/bash
+      if [ $# -eq 0 ]
+      then
+        echo "no arguments"
+        exit 1
+      fi  
+      for arg in $@
+      do
+        echo "$arg"
+      done
+    ``` 
+  - Diplay the third value of each row of the following file
+    ```
+        100:anny:1250:A
+        200:bnny:2250:B
+        300:snny:3250:C
+    ```
+    ```
+        #! /bin/bash
+        for row in $(cat abovefile.txt)
+        do
+          value=$(echo $row | cut -d ":" -f 3)
+          echo value
+        done
+    ``` 
 ##### until loop
 ##### exit loop
