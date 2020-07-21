@@ -72,7 +72,8 @@ This repository contains my personal notes on the [linux commands with shell pro
         - [for loop](#for-loop)
       - [Arrays concept](#arrays-concept)
         - [How to create arrays](#how-to-create-arrays)
-        - [How to create arrays](#how-to-create-arrays-1)
+        - [How to access arrays](#how-to-access-arrays)
+        - [Example](#example)
 
 # Linux Commands
 ## Useful Linux commands
@@ -1208,7 +1209,7 @@ Regular expressions.
 - If we know elements at the beginning: `courses=("java" "shell" "linux")`
 - If we don't know elements at the beginning: `courses[0]="java"`, `courses[1]="shell"`, we are not required to declare the courses array separately, but we can do it using the follwing code `declare -a courses`. The index values need not be consecutive, we can take randomly.
 
-##### How to create arrays
+##### How to access arrays
 - We can access array elements by using index which is 0 based.
 - `echo ${courses[0]}` will print the first element of the array.
 - `echo ${courses[@]}` will print all elements of the array with space separator.
@@ -1216,3 +1217,37 @@ Regular expressions.
 - `echo ${!courses[@]}` will print all indices where elements are available.
 - `echo ${#courses[@]}` will print the number of elements present inside the array.
 - `echo ${#courses[0]}` will print the length of the first element. 
+##### Example
+- Write a script to create an array with some elements and print all its elements by using while loop, for loop and the alternative for loop
+  - Using while loop
+  ```
+        #! /bin/bash
+        declare -a fruits
+        fruits={"A", "B", "C"}
+        index=0
+        while [ index -lt ${#fruits[@]} ]
+        do
+          echo ${fruits[$index]} 
+          let index++
+        done  
+  ```
+  - Using for loop
+  ```
+        #! /bin/bash
+        declare -a fruits
+        fruits={"A", "B", "C"}
+        for fruit in ${fruits[@]}
+        do
+          echo ${fruit} 
+        done  
+  ```
+  - Using alternative for loop
+  ```
+        #! /bin/bash
+        declare -a fruits
+        fruits={"A", "B", "C"}
+        for((index=0; index<${#fruits[@]; index++))
+        do
+          echo ${fruits[index]} 
+        done  
+  ```
