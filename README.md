@@ -1177,5 +1177,30 @@ Regular expressions.
           echo value
         done
     ``` 
+    ##### alternative syntax of for loop
+    ```
+        #! /bin/bash
+        for ((i=0; $i<5; i++))
+        do
+          echo $i
+        done  
+    ```
+    - Inside the expression ((...)), the spaces and the $ symbol are not required.
+    - Write a script to test if a number is prime
+    ```
+        #! /bin/bash
+        read -p "enter a number grater than 1" n
+        counter=0
+        for ((i=2; $i<=n/2; i++))
+        do
+          if [ $[n%i] -eq 0 ]
+          then
+            echo "it is not a prime number"
+            exit 1
+          fi  
+        done  
+        echo "it is a prime number"
+    ``` 
+
 ##### until loop
 ##### exit loop
