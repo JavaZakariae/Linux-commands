@@ -73,7 +73,8 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [Arrays concept](#arrays-concept)
         - [How to create arrays](#how-to-create-arrays)
         - [How to access arrays](#how-to-access-arrays)
-        - [Example](#example)
+        - [Examples](#examples)
+      - [Shell Script Functions](#shell-script-functions)
 
 # Linux Commands
 ## Useful Linux commands
@@ -1217,7 +1218,7 @@ Regular expressions.
 - `echo ${!courses[@]}` will print all indices where elements are available.
 - `echo ${#courses[@]}` will print the number of elements present inside the array.
 - `echo ${#courses[0]}` will print the length of the first element. 
-##### Example
+##### Examples
 - Write a script to create an array with some elements and print all its elements by using while loop, for loop and the alternative for loop
   - Using while loop
   ```
@@ -1251,3 +1252,34 @@ Regular expressions.
           echo ${fruits[index]} 
         done  
   ```
+#### Shell Script Functions
+- How to define a function 
+  - First way
+    ``` 
+      function f1()
+      {
+          a=$1
+          b=$2
+          echo "you passed $a and $b" 
+      } 
+    ```
+  - We call the function by the flllowing command `f1 5 6`
+  - The function keyword is optional, if we need to pass parameters, it is not possible to declare them in the function signature, but we can access them using `$1` for the first parameter, `$2` second, ...
+  - Write a function that print all passed parameters:
+    ```
+    #! /bin/bash
+    shellfunction()
+    {
+        if [ $# -eq 0 ]
+        then
+          echo "please you should pass parameter to the function"
+        else
+          for param in $@
+          do
+            echo $param
+          done
+        fi    
+    }
+    # calling the above function
+    shellfunction 1 254 4
+    ```
