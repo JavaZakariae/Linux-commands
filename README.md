@@ -1283,3 +1283,21 @@ Regular expressions.
     # calling the above function
     shellfunction 1 254 4
     ```
+  - Write a function that print the factorial of a given integer number:
+    ```
+    #! /bin/bash
+    factorial(){
+      if [ $1 -le 0 ]
+      then
+        echo "please enter a positive integer"
+      else
+        let factorial=1;
+        for ((let i=2; i<$1; i++))  
+        do
+          factorial=$factorial*i
+        done
+        echo $factorial
+    }
+    read -p "enter any positive integer" n
+    factorial $n
+    ```
