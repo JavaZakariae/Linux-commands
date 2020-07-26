@@ -1301,3 +1301,48 @@ Regular expressions.
     read -p "enter any positive integer" n
     factorial $n
     ```
+- Varibale scopes 
+  - The below examples are valid programs, by default every declared variable has a global scope, even those declared inside a function. Before using a variable, it should be declared already. 
+    ```
+      #! /bin/bash
+      f1(){
+        echo $x
+      }
+      x=10
+      f1
+    ```
+
+    ```
+      #! /bin/bash
+      f1(){
+        x=10
+      }
+      echo $x
+      f1
+    ```
+  - If we want to declare a variable local to a function, we use the `local` keyword.
+    ```
+        #! /bin/bash
+        f1(){
+          local x=10
+        }
+        f1
+        echo $x // no access to the x variable, en empty value will be printed.
+    ```
+
+    ```
+        #! /bin/bash
+        f1(){
+          local x=10
+        }
+        f1
+        x=20
+        echo $x   //will print 20.
+    ```
+- Return statement
+  - Every function in shell scripting returns some value, the dafault return value is the exit code/status code of the last command inside function. But based on our requirement, we can return values explicitly by using the return statement `return <exit_code>`, the allowed values are in the range `[0, 255]`. we can get the return value of the function bu using `$?`.
+  - The difference between `exit` and `return` in context of a function, the `exit` will end the program, but `return` will only returns from the function and the program can continue executing.       
+- break vs exit vs return
+  - break: we can use break only inside loops to break loop execution.
+  - exit: we can use exit anywhere, to terminate script execution.
+  - return: we can use return only inside function to stop the execution of the function.
