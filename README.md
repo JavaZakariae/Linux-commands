@@ -134,13 +134,13 @@ This repository contains my personal notes on the [linux commands with shell pro
 
 ## Linux sub directories
 
-- bin directoery: it contains all binary executables related to our linux commands, `which touch` will print `/user/bin/touch`
-- sbin directory: it means system bin, an it contains binary executables related to the super user. 
-- etc directory: it contains system configuration informations required by the operationg system, for example the passwords of the users `/etc/passwd`, groups info `/etc/group` and hosts info `/etc/hosts`(ip addresses and dns names).
+- bin directory: it contains all binaries executable related to our linux commands, `which touch` will print `/user/bin/touch`
+- sbin directory: it means system bin, an it contains binary executable related to the super user. 
+- etc directory: it contains system configuration information required by the operating system, for example the passwords of the users `/etc/passwd`, groups info `/etc/group` and hosts info `/etc/hosts`(ip addresses and dns names).
 - tmp directory: `tmp` means temporary, if any file or directory is required temporary, it is created under the tmp folder in the current session. the content of the directory will be deleted automatically after the shutdown.
-- dev directory: `dev` means device, all the device related files will be stored in this directory, using those files, we can communicate with the device, tty file for terminal related files, hd for harde drive file ...
+- dev directory: `dev` means device, all the device related files will be stored in this directory, using those files, we can communicate with the device, tty file for terminal related files, hd for hard drive file ...
 - mnt directory, media directory(for mounting).
-- opt directory: opt means optional, it contains all the 3rd part software installaion files.
+- opt directory: opt means optional, it contains all the 3rd part software installation files.
 - lib directory: lib means libraries, which are required by applications.
 - var: var means variable data, variable data will be stored inside this directory, for example the log files. 
 - usr: all users related software.
@@ -156,7 +156,7 @@ This repository contains my personal notes on the [linux commands with shell pro
 - List content in reverse alphabetical order: `ls -r`
 - List content in a long format(more details on the content): `ls -l`
 - List content based on creation time: `ls -t`
-- Possibilioty to combine all the above options: `ls -ltr`
+- Possibility to combine all the above options: `ls -ltr`
 - List also the hidden files: `ls -a`
 - List contents by type: `ls -F` (/, *, @)
 - List contents recursively: `ls -R`
@@ -164,7 +164,7 @@ This repository contains my personal notes on the [linux commands with shell pro
 - List contents of the top 10 entries: `ls -l /dir | head`
 - List contents of the top 5 entries: `ls -l /dir | head -5`
 - List contents of the bottom 10 entries: `ls -l /dir | tail`
-- List contents page by page: `ls -l /dir | more` or `ls -l /dir | less`, less is more powerful(forward and backword direction).
+- List contents page by page: `ls -l /dir | more` or `ls -l /dir | less`, less is more powerful(forward and backward direction).
 
 ## Creation of directories
 
@@ -172,7 +172,7 @@ This repository contains my personal notes on the [linux commands with shell pro
 - To create multiple directories in the same pwd: `mkdir dir1 dir2 dir3`
 - To create multiple directories from the same pwd: `mkdir -p dir1/dir2/dir3`. `dir1, dir2` will be created only if they don't exist already.
 - To create multiple directories `mkdir -p dir1/dir2{dir3-1,dir3-2,dir3-3}/dir{1..31}`, every dir3-x will contains 31 directories.
-- Show directory content as a tree datastructure:  `tree`
+- Show directory content as a tree data structure:  `tree`
 
 ## Removing directories rm and rmdir commands
 - To remove directories: `rmdir dir1 dir2` (rmdir removes only directories, no file will be deleted, and it will works only if the directories are empty).
@@ -184,8 +184,8 @@ This repository contains my personal notes on the [linux commands with shell pro
 ## Copying moving and renaiming files and directories
 - To copy file content from one file to another: ```cp a.txt b.txt```, if ```b.txt``` doesn't exist, a new file will be created, if it already exists, the file will be overwritten. ```cp a.txt home/anotherDirectory/c.txt``` to copy content to another destination.
 - To copy files to directories: ```cp a.txt b.txt c.txt home/anotherDirectory/d.txt```, to copy all files ```cp dir1/* dir2```
-- To copy total diretory: ```cp -r dir1 dir2```, the content of ```dir1``` will be copied to ```dir2```
-- Renaiming a file: ```mv a.txt b.txt```, to rename a directory ```mv dir1 dir2```, if ```dir2``` already exists, ```dir1``` wil be moved inside ```dir2```
+- To copy total directory: ```cp -r dir1 dir2```, the content of ```dir1``` will be copied to ```dir2```
+- Renaming a file: ```mv a.txt b.txt```, to rename a directory ```mv dir1 dir2```, if ```dir2``` already exists, ```dir1``` wil be moved inside ```dir2```
 - Moving files from one directory to another: ```mv dir1/* dir2```, ```mv a.txt b.txt dir2```
 
 ## Creation of files using cat touch gedit and vi
@@ -201,27 +201,27 @@ This repository contains my personal notes on the [linux commands with shell pro
 - Copy content from one file to another using cat command: ```cat a.txt >> b.txt```, using ```>``` will overwrite the content of the b.txt file. 
 - Copy content from many files to one file: ```cat a.txt b.txt >> c.txt```
 - View content of a file in reversed order: ```tac a.txt```, the order here is the order of the file lines.
-- View content of a file in a horizental reversed order: ```rev a.txt```, if the content of ```a.txt``` is ```content```, the result of the previous command will be ```tnetnoc```
+- View content of a file in a horizontal reversed order: ```rev a.txt```, if the content of ```a.txt``` is ```content```, the result of the previous command will be ```tnetnoc```
 - ```cat``` command is suitable for small ```files```, if the files are huge, ```head``` and ```tail```, ```more``` and ```less``` are the most recommended commands.
 - To view specified lines from the top of a file: ```head a.txt```, first 10 lines ```head -n 10 a.txt```, abbreviation: ```head -10 a.txt```
-- To view specified lines except some specified lines: ```head -n -5 a.txt``` will diplay all lines except the last 5 lines.
+- To view specified lines except some specified lines: ```head -n -5 a.txt``` will display all lines except the last 5 lines.
 - To view specified number of character: ```head -c 5 a.txt``` will show the first 5 characters.
 - To view specified lines from the bottom of a file: ```tail a.txt``` last 10 lines, last 5 lines ```tail -n 5 a.txt```, abbreviation: ```tail -5 a.txt```, ```tail -c 100 a.txt``` will print the last ```100``` characters.
 - To view content from line 3 to line 7 using piping: ```head -7 a.txt | tail -5```
 
 ## View files content using less and more
-- To view file content page per page:  ```more a.txt```, press ```enter``` to diplay next line, press ```space bar``` to diplay the next page, press ```q``` to exit, ```more -d a.txt``` to diplay more info about the file. By using more command, we can view file content page per page only in forward direction.
-- To view file content page per page either in forward direction or backward direction: ```less a.txt```, press ```d``` to diplay the next page (d means down),  press ```b``` to diplay the previous page (b means backward).
+- To view file content page per page:  ```more a.txt```, press ```enter``` to display next line, press ```space bar``` to display the next page, press ```q``` to exit, ```more -d a.txt``` to display more info about the file. By using more command, we can view file content page per page only in forward direction.
+- To view file content page per page either in forward direction or backward direction: ```less a.txt```, press ```d``` to display the next page (d means down),  press ```b``` to display the previous page (b means backward).
 
 ## Creation of hidden files and directories
 - If any file name starts with ```.```, such file is a hidden file.
-- Create hiiden files: the name of the file should begin by a ```.```, example: ```touch .a.txt```, ```cat > .b.dat```
-- Display hiden files: ```ls -a```
-- Create hiiden directories: ```mkdir .dir1```
+- Create hidden files: the name of the file should begin by a ```.```, example: ```touch .a.txt```, ```cat > .b.dat```
+- Display hidden files: ```ls -a```
+- Create hidden directories: ```mkdir .dir1```
 - Conversion of Normal/hidden files: using renaiming operation, ```mv .a.txt a.txt```
 
 ## Copying moving and renaiming files and directories using cp and mv commands (2)
-- ```cp a.txt b.txt```, if b.txt exists, its content will be ovewritten directly, to get confirmation message, ```cp -i a.txt b.txt```
+- ```cp a.txt b.txt```, if b.txt exists, its content will be overwritten directly, to get confirmation message, ```cp -i a.txt b.txt```
 - Copy multiple files content to one destination file: ```cat a.txt b.txt > c.txt```
 - Moving and renaming files: ```mv oldname.txt newname.txt```
 - Moving and renaming directories: ```mv olddirname newdirname```, if olddirname exists already, then olddirname will be moved to newdirname, otherwise the renaming operation will take place.
@@ -236,7 +236,7 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 
 - ```diff``` command: it will show all differences, ```diff file1.txt file2.txt```
 - ```sdiff``` command: all differences in a parallel comparison.
-- ```vimdiff``` command: advanced tool to show the differences, it will highlight all differnces in a vim editor, ```sudo apt-get install vim``` to install the tool, two windows will be shown, ```ctrl+w+w``` to go to the other window, ```:q``` to close current window, ```:qa``` to close all windows, ```:qai``` close and ignore all changes. 
+- ```vimdiff``` command: advanced tool to show the differences, it will highlight all differences in a vim editor, ```sudo apt-get install vim``` to install the tool, two windows will be shown, ```ctrl+w+w``` to go to the other window, ```:q``` to close current window, ```:qa``` to close all windows, ```:qai``` close and ignore all changes. 
 
 ##  Soft and hard link
 - In Windows, we have only soft link files (shortcut|raccourci), in linux we have also hard link files.
@@ -249,26 +249,26 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 ## Sort commands 
 - Sort command, to sort files content line by line in an alphabetical order: ```sort a.txt``` will only print the sorted order. ```sort a.txt > b.txt``` will redirect the sorted order output to the new file. ```sort a.txt > temp.txt``` and ```mv temp.txt > a.txt``` will make change on the same source file.
 - Sort in a reverse alphabetical order: ```sort -r a.txt```
-- The spaces in the beginnning of a line are ignored, blank line came first when sorting, Upper case before lowercase, If the file contains numbers, the numbers will come before letters.
+- The spaces in the beginning of a line are ignored, blank line came first when sorting, Upper case before lowercase, If the file contains numbers, the numbers will come before letters.
 - If we want only unique lines, no duplicate, we should use ```-u``` option, ```sort -u a.txt```
 - If we want to sort based on numerical values: ```sort -n a.txt```, ```sort -nr a.txt```
-- Sort based on the column line number:  ``` ls etc/ -l | head -7 | sort -rk 5``` will show the info of the top 7 files in etc folder and will sort them recursivly based on the fifth column (length of file).
+- Sort based on the column line number:  ``` ls etc/ -l | head -7 | sort -rk 5``` will show the info of the top 7 files in etc folder and will sort them recursively based on the fifth column (length of file).
 - Sort based on the column lines in a file composed by lines in the following format ```token1:token2:token3```, ```:``` is called a separator. To sort such file: ```sort -k 3 -t ":" a.txt```
 
 ## Uniq commands
 - Find unique content ```sort -u a.txt```, but uniq command is more powerful, ```uniq a.txt``` works only on sorted files, ```sort a.txt | uniq```.
 - With uniq command, we can use multiple options:
-  - ```-d```: to disply ony duplicate lines.
-  - ```-c```: to disply numbers of occurences of each line.
+  - ```-d```: to display ony duplicate lines.
+  - ```-c```: to display numbers of occurrences of each line.
   - ```-i```: to ignore case while comparing.
-  - ```-u```: to disply ony unique lines.
+  - ```-u```: to display ony unique lines.
   
 ## Input and Output
 - command take some input and produces some output:  
   - Input in two forms: stdin or command line argument, stdin example: `echo "hello" >> file.txt`,  command line argument example:  `touch file.txt`
-  - Output in two forms: stdout or stderror, stderror in cas when the terminal print arrors.
+  - Output in two forms: stdout or stderror, stderror in cas when the terminal print arrows.
 - Standard Input, Standard Output and Standard Error are data stream and can be redirected from one place to another place. Hence, piping and redirection are possible on those data streams.
-    - stdIn associated with the number 0, by defualt it is connected with the keyboard.
+    - stdIn associated with the number 0, by default it is connected with the keyboard.
     - stdOutput associated with the number 1, connected with the terminal.
     - stdError associated with the number 2, connected with the terminal.
 
@@ -284,8 +284,8 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 
 ## Piping  
 - `ls -l /etc | more`, the output of the first command will be the input of the second command.
-- `ls -l /etc > somefile.txt | more`, no piping beacause the redirection symbol breaks the piping.
-- `tee` commmand: if we want to save the output of intermedite command and want to pass that output as input to next command, `ls -l /etc tee somefile.txt | more`
+- `ls -l /etc > somefile.txt | more`, no piping because the redirection symbol breaks the piping.
+- `tee` command: if we want to save the output of intermediate command and want to pass that output as input to next command, `ls -l /etc tee somefile.txt | more`
 - `rm` command can't take data stream as input, but can only get arguments from the command line terminal, for that purpose, the command `xargs` can be used to converts data stream to arguments. Example: `cat /etc | xargs rm`
 - pipe symbol `|` can be used to link two commands, `>` is useful when redirecting the output to another place.
 
@@ -301,7 +301,7 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
 - To know the original name of an alias: `type cls`
 - Aliases are temporary unless we persist them permanently: 
     - Editing the .bashrc file, It could be found inside the user home directory.
-    - Create our new aliasing file, the name of the file should be .bash_aliasses and should be located in the user home directory.
+    - Create our new aliasing file, the name of the file should be .bash_aliases and should be located in the user home directory.
     
 ## Regular expressions
 - If we want to represent a collection of strings according to a particular pattern, then we should go for 
@@ -324,8 +324,8 @@ Regular expressions.
 ## locate
 - We can use locate to locate files and directories in our system.
 - `locate file.txt`, `locate *.txt`: to locate the given entries, locate command look in a database to locate the given entries, the database is updated only one time a day, so to update the database we should use the following command: `sudo updatedb`
-- `locate -S`: to get the statistics of the database, `locate -i FilE.txt` to ignore case sensivity. `locate --limit 5 a.txt` to limit the search to 5 entries.
-- `locate --existing b.jpeg`, or with `-e` option: check if the gievn file exist or not.
+- `locate -S`: to get the statistics of the database, `locate -i FilE.txt` to ignore case sensitivity. `locate --limit 5 a.txt` to limit the search to 5 entries.
+- `locate --existing b.jpeg`, or with `-e` option: check if the given file exist or not.
 - Advantage of using a database is related to performance.
 
 ## find command
@@ -363,11 +363,11 @@ Regular expressions.
 - `grep someword -n *`: to print the lines number where the pattern is found. 
 - `grep someword -l *`: to print only the file names where the pattern is found. 
 - `grep someword -v *`: to print the lines where the pattern is not found. 
-- `grep -w 'word1' *`: will search for the exact word, `aword100` will not be valid, only `word1` will be a correct awnser.
+- `grep -w 'word1' *`: will search for the exact word, `aword100` will not be valid, only `word1` will be a correct answer.
 - Display before, after and surrounding lines including search result: `-A` means After, `-B` means Before, `-C` means Before and After. `grep 'word1' -B3 *`
 - Search multiple contents in a file: `egrep '(word1|word2)' *`, `grep` can understand only some patterns; for this reason we use `egrep`
 - `grep -o 'word1' *`: will print only matched pattern.
-- `egrep -R '(word1|word2)' *`: will execute recursivly, it means also checking the sub-directories.
+- `egrep -R '(word1|word2)' *`: will execute recursively, it means also checking the sub-directories.
 
 ## Regular expressions patterns
 #### Character Patterns
@@ -387,21 +387,21 @@ Regular expressions.
 - `\<the\>`: lines that start exactly with the word `the`
 - `^[aeiu]`: lines that start with `a`, `e`, `i` or `u`
 - `^[^aeiu]`: lines that do not start with `a`, `e`, `i` or `u`
-- `^....$`: lines that contains only 4 charachters.
+- `^....$`: lines that contains only 4 characters.
 - `^\.`: lines that starts with the `.` symbol.
 - `^$`: blank lines, to remove blank lines, `grep '^$' file.txt > temp.txt`, `mv temp.txt file.txt`.
 
 #### Additional Patterns available only when using the egrep command
 - `|`: it matches any of the passed string, `egrep '(linux|java|docker)' *`.
-- `{m}`: it matches exactly m occurences of the preceiding character.  `egrep '[0-9]{10}' *` will match every 10-digit mobile numbers.
-- `{m, n}`: it matches minimum m occurences and maximum occurences of the preceiding character.  `egrep '[0-9]{8, 10}' *` will match every 8-digit, 9-digit and 10-digit mobile numbers. `{m, }` means no restriction for the maximum occurences. 
+- `{m}`: it matches exactly m occurrences of the preceding character.  `egrep '[0-9]{10}' *` will match every 10-digit mobile numbers.
+- `{m, n}`: it matches minimum m occurrences and maximum occurrences of the preceding character.  `egrep '[0-9]{8, 10}' *` will match every 8-digit, 9-digit and 10-digit mobile numbers. `{m, }` means no restriction for the maximum occurrences. 
 
 ## The cut command
 - we use the cut command to extract specific data from files, the file can be either normal or tabular.
 - `cut -c 9 emp.dat`: print the `9th` character in each line.
 - `cut -c 3-5 emp.dat`: print the `3th`, `4th`, `5th` character in each line, `-c 3-` the 3th to the last character, `-c -3` will print the `3` first characters by each line.
 - `cut -c 3-5 7-9 emp.dat`: will display the `3th`, `4th`, `5th` characters and also the `7th`, `8th` and `9th`
-- Display content based on delimiter: `name|username|password`, to print the second column we can use `cut -d "|" -f 3 tabularfile`, `d` option for delimiter and `f` for field, `-f 1-3` to get the columns 1, 2 and 3, `-f -2` to get up to the second column, `-f 1, 3` to get only the first and third column, to get all columns execpt the third column, we can use  `cut -d "|" --complement -f 3 tabularfile`
+- Display content based on delimiter: `name|username|password`, to print the second column we can use `cut -d "|" -f 3 tabularfile`, `d` option for delimiter and `f` for field, `-f 1-3` to get the columns 1, 2 and 3, `-f -2` to get up to the second column, `-f 1, 3` to get only the first and third column, to get all columns except the third column, we can use  `cut -d "|" --complement -f 3 tabularfile`
 
 ## The Linux File Permissions Concept
  File persmmisions describe the allowed operations by various users.
