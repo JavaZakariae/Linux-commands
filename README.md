@@ -1,5 +1,5 @@
 ## Introduction
-This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the Linux operating system, but it can be very useful as a reminder of how a specific Linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming (still working on it). 
+This repository contains my personal notes on the [linux commands with shell programming](https://www.durgasoftonline.com/s/store/courses/description/Linux-with-Shell-ProgrammingSEDAWK-and-many-more) course given by sir Durga. This repository is not intended to explain the Linux operating system, but it can be very useful as a reminder of how a specific Linux command works. In the first part of this repository, you can find good examples of almost everything related to linux commands, in the second part you will find everything related to shell programming. 
 
 - [Linux Commands](#linux-commands)
   - [Useful Linux commands](#useful-linux-commands)
