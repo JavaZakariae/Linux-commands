@@ -1367,3 +1367,7 @@ Regular expressions.
         add 5 10
   ```
   the line `. ./utilistyscript.sh` for including the script `utilistyscript.sh`, the script should be placed in the given path.
+  
+  
+## Various topics
+- Hox to copy files over ssh: [awnser](https://unix.stackexchange.com/questions/106480/how-to-copy-files-from-one-machine-to-another-using-ssh)
