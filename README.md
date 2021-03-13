@@ -46,6 +46,7 @@ This repository contains my personal notes on the [linux commands with shell pro
       - [Umask](#umask)
   - [Working with editors](#working-with-editors)
   - [Stackoverflow questions](#stackoverflow-questions)
+  - [Checking Resource Usage](#checking-resource-usage)
 - [Shell scripting](#shell-scripting)
   - [What is Shell?](#what-is-shell)
   - [Types of Shell?](#types-of-shell)
@@ -547,7 +548,14 @@ Regular expressions.
       - `:n`: place the cursor to the nth line.
       - `:$`: place the cursor to the laste line.
       - `:!<unix_command>`: to execute any unix command, `:!ls`, `:!date`, ...
-   
+
+## Checking Resource Usage
+
+- `free -m` (memory usage)
+- `htop` (cpu usage, live mode)
+- `df -mh` (disk space usage)
+- `uptime` (how long the system has been running)
+
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
 
