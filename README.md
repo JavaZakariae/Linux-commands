@@ -556,6 +556,16 @@ Regular expressions.
 - `df -mh` (disk space usage)
 - `uptime` (how long the system has been running)
 
+## Package Management(ubuntu)
+- `apt update`: update repository(no instalation)
+- `apt list`: list all packages, with `--upgradable` (list only the packages that can be upgraded) 
+- `apt search packageName`: to search a given package.
+- `apt install packageName`: to install a given package.
+- `apt remove packageName`: to remove a given package.
+- `apt autoremove`: to remove packages no longer needed/used.
+- `apt upgrade`: to upgrades all local packages.
+- `apt dist-upgrade`: to upgrades all local packages, even installing new ones or removing existing packeges [more info](https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade).
+
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
 
