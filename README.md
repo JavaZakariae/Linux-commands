@@ -581,6 +581,21 @@ Regular expressions.
 - `journalctl -u jenkins`: print only the jenkins service logs, note that we can use also the `-f` option. 
 - `cat var/log/syslog | grep jenkins` print logs that contains the jenkins keyword.
 
+## Managing users
+- `cat etc/passwd`: to print the list of users with details like `uis`, `gid`, default bash...
+- `cat etc/shadow`: to check the hashed password of the users.
+- `cat etc/group`: to print the list of groups.
+- `adduser batman`: to add a new user batman.
+- `su - batman`: switch to the batman user, logout to come back to the main user. 
+- `passwd`: to change the password of the current user.
+- `sudo passwd brahim`: to change the password of brahim.
+- `sudo userdel -r brahim`: to delete the user brahim, also -r will delete the home directory of brahim.
+- `sudo groupadd players`: to add playrs as a new group.
+- `groups`: to print the groups where the current user is member.
+- `groups zaki`: to print the groups where the user zaki is member.
+- `sudo usermod -aG players brahim`: to add brahim to the players group.
+- `sudo gpasswd -d zaki players`: to remove the user zaki form the group players.
+- `sudo groupdel players`: to delete the grous players.
 
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
