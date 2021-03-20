@@ -574,6 +574,13 @@ Regular expressions.
 - `systemctl start jenkins`: start jenkins.
 - `systemctl restart jenkins`: restart jenkins.
 
+## Viewing Logs
+- `cat var/log/syslog`: print the content of the syslog file. The `var/log` directory contains logs of different services.
+- `tail -n 20 var/log/syslog`: print the last 20 lines from the syslog file.
+- `tail -f var/log/syslog`: print the last 10 lines from the syslog file, and show any live modification to the output.
+- `journalctl -u jenkins`: print only the jenkins service logs, note that we can use also the `-f` option. 
+- `cat var/log/syslog | grep jenkins` print logs that contains the jenkins keyword.
+
 
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
