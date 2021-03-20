@@ -566,6 +566,15 @@ Regular expressions.
 - `apt upgrade`: to upgrades all local packages.
 - `apt dist-upgrade`: to upgrades all local packages, even installing new ones or removing existing packeges [more info](https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade).
 
+## Managing systemd Units (services)
+- `systemctl status jenkins`: systemctl is included in systemd, the preceding command check the status of the jenkins service.
+- `systemctl disable jenkins`: do not start jenkins automatically after the boot.
+- `systemctl enable jenkins`: start jenkins automatically after the boot.
+- `systemctl stop jenkins`: stop the service jenkins.
+- `systemctl start jenkins`: start jenkins.
+- `systemctl restart jenkins`: restart jenkins.
+
+
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
 
