@@ -47,6 +47,12 @@ This repository contains my personal notes on the [linux commands with shell pro
   - [Working with editors](#working-with-editors)
   - [Stackoverflow questions](#stackoverflow-questions)
   - [Checking Resource Usage](#checking-resource-usage)
+  - [Managing systemd Units](#Managing-systemd-Units-(services))
+  - [Viewing Logs](#viewing-logs)
+  - [Managing users](#managing-users)
+  - [Bash history](#bash-history)
+
+
 - [Shell scripting](#shell-scripting)
   - [What is Shell?](#what-is-shell)
   - [Types of Shell?](#types-of-shell)
