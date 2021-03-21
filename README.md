@@ -21,7 +21,7 @@ This repository contains my personal notes on the [linux commands with shell pro
   - [Sort commands](#sort-commands)
   - [Uniq commands](#uniq-commands)
   - [Input and Output](#input-and-output)
-  - [Redirecting stdInput stdOutput and  stdError](#redirecting-stdinput-stdoutput-and-stderror)
+  - [Redirecting stdInput stdOutput and stdError](#redirecting-stdinput-stdoutput-and-stderror)
   - [Piping](#piping)
   - [Execute multiple command](#execute-multiple-command)
   - [Commands aliasing](#commands-aliasing)
@@ -47,7 +47,7 @@ This repository contains my personal notes on the [linux commands with shell pro
   - [Working with editors](#working-with-editors)
   - [Stackoverflow questions](#stackoverflow-questions)
   - [Checking Resource Usage](#checking-resource-usage)
-  - [Managing systemd Units](#Managing-systemd-Units-(services))
+  - [Managing systemd units](#managing-systemd-units)
   - [Viewing Logs](#viewing-logs)
   - [Managing users](#managing-users)
   - [Bash history](#bash-history)
@@ -279,7 +279,7 @@ Example:  ```echo "hello" >> file1.txt```, ```echo "hello2" >> file2.txt```, ```
     - stdOutput associated with the number 1, connected with the terminal.
     - stdError associated with the number 2, connected with the terminal.
 
-## Redirecting stdInput stdOutput and  stdError
+## Redirecting stdInput stdOutput and stdError
 - Redirecting stdOutput: We can perform redirection using `>` and `>>`, `cat 1> output.txt`
 - Redirecting standard error: Instead of terminal we can redirect messages from terminal to another place, a file as an example. `cal jkbjkcabjkac 2> log.txt`, 2 stands for stdError.
 - Redirecting standard input: we can use the `<` symbol to perform input redirection, `cat 0< a.txt`, 0 is optional.
@@ -572,7 +572,8 @@ Regular expressions.
 - `apt upgrade`: to upgrades all local packages.
 - `apt dist-upgrade`: to upgrades all local packages, even installing new ones or removing existing packeges [more info](https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade).
 
-## Managing systemd Units (services)
+
+## Managing systemd units
 - `systemctl status jenkins`: systemctl is included in systemd, the preceding command check the status of the jenkins service.
 - `systemctl disable jenkins`: do not start jenkins automatically after the boot.
 - `systemctl enable jenkins`: start jenkins automatically after the boot.
