@@ -597,6 +597,12 @@ Regular expressions.
 - `sudo gpasswd -d zaki players`: to remove the user zaki form the group players.
 - `sudo groupdel players`: to delete the grous players.
 
+## Bash history
+- `history`: to print history of typed commands, every command will have an number associated.
+ we can run the `command with number 10` by typing `!10`.
+- to not save typed commands on the history, we type a space before typing the command name. 
+
+
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
 
