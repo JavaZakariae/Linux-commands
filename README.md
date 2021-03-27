@@ -604,6 +604,14 @@ Regular expressions.
 - `sudo gpasswd -d zaki players`: to remove the user zaki form the group players.
 - `sudo groupdel players`: to delete the grous players.
 
+## SSH
+- print active internet connection: `netstat -tulpn`
+- print where the ssh program is lcoated: `which sshd`
+- check if ssh is running: `systemctl status ssh`
+- to connect to a remote machine via ssh: `ssh username@1.2.3.4` where 1.2.3.4 is the ip adress of the remote machine, the user will be asked to enter the password of the guven user. it is recommended to disallow password authentication and root access to the machine, a better way is to use public/private key authentication.
+- default configuration of ssh in the server: `/etc/ssh/sshd_config`. 
+- to check log of authentication to the server: `/var/log/auth.log`.
+
 ## Bash history
 - `history`: to print history of typed commands, every command will have an number associated.
  we can run the `command with number 10` by typing `!10`.
