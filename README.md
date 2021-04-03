@@ -50,6 +50,7 @@ This repository contains my personal notes on the [linux commands with shell pro
   - [Managing systemd units](#managing-systemd-units)
   - [Viewing Logs](#viewing-logs)
   - [Managing users](#managing-users)
+  - [SSH](#ssh)
   - [Bash history](#bash-history)
 
 
@@ -605,12 +606,27 @@ Regular expressions.
 - `sudo groupdel players`: to delete the grous players.
 
 ## SSH
-- print active internet connection: `netstat -tulpn`
+- print actives network connections: `netstat -tulpn`, for pid informations, use `sudo netstat -tulpn` 
 - print where the ssh program is lcoated: `which sshd`
 - check if ssh is running: `systemctl status ssh`
-- to connect to a remote machine via ssh: `ssh username@1.2.3.4` where 1.2.3.4 is the ip adress of the remote machine, the user will be asked to enter the password of the guven user. it is recommended to disallow password authentication and root access to the machine, a better way is to use public/private key authentication.
+- to connect to a remote machine via ssh: `ssh username@1.2.3.4` where `1.2.3.4` is the ip adress of the remote machine, the user will be asked to enter the password of the guven user. it is recommended to disallow password authentication and root access to the machine, a better way is to use public/private key authentication.
+- `ssh -i publickey.pem username@1.2.3.4` to log in using ssh with the given public key.
+- `ssh -v -i publickey.pem username@1.2.3.4` to log in using ssh with the given public key in debug mode, we get more details on the terminal, with that debug mode, if there is some issue to connect via ssh, the output can be helpful.
+- `ssh -p 33 username@1.2.3.4`: to connect via ssh on a customized port, normally the default port is `22`.
 - default configuration of ssh in the server: `/etc/ssh/sshd_config`. 
-- to check log of authentication to the server: `/var/log/auth.log`.
+- to check the logs of authentication to the server: `/var/log/auth.log`.
+- on the client side, when connecting via `ssh` to a remote server, a folder named `.ssh` will be created and will contains the following files:
+  - `known_hosts`: hosts that the client already connected to via `ssh`.
+  - `id_rsa`: private key.
+  - `id_rsa.pub`: public key.
+- ssh server configuration: 
+  - the config file to edit is `/etc/sshd_config`.
+  - we can edit some configurations like port number, prohibit root login, no user/password authentication....
+  - We can allow only some users or groups to connect via ssh with `AllowsUsers groupname user1 user2`
+- keys generation:
+  - ssh-key-gen: to generate new keys, by default they will be placed inside `.ssh` folder, `id_rsa` as default name of the private key, `id_rsa.pub` as default public key name, the private key should be kept private.
+- `ssh-copy-id -i /.ssh/id_rsa.pub username@1.2.3.4`: to copy the public to the remote ssh server, with that further logging will succeed without passing password or publickey. 
+- `ssh-copy-id` will copy our public key to the remote `/.ssh/authorized_keys` file in the ssh server. In the authorized_keys file, every line represent a client ssh public key.
 
 ## Bash history
 - `history`: to print history of typed commands, every command will have an number associated.
