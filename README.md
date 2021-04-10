@@ -51,7 +51,8 @@ This repository contains my personal notes on the [linux commands with shell pro
   - [Viewing Logs](#viewing-logs)
   - [Managing users](#managing-users)
   - [SSH](#ssh)
-  - [Bash history](#bash-history)
+  - [Bash history](#bash-history)- 
+  - [Network linux commands](#network-linux-commands)
 
 
 - [Shell scripting](#shell-scripting)
@@ -633,7 +634,22 @@ Regular expressions.
  we can run the `command with number 10` by typing `!10`.
 - to not save typed commands on the history, we type a space before typing the command name. 
 
-
+## Network linux commands
+- `hostname`: to print the name of the host, with `-d` option it prints the domain name which the machine belongs to, with `-f` option, it prints the fully qualified domaine name, with -`i`, it prints the ip address of the machine.
+- `ping`: used to cchechk the establishement of the connection and also the speed of that connection, `ping www.google.fr`.
+- `netstat`: list detailed information about connection to and from the host, with `-t` option we list only tcp connections, with u only udp connections and with `-l` we list only listening ports, with -p we list also the pid/program name information.
+- `netstat -c`: display information continiously (live)
+- `netstat -r`: display the kernel routing table.
+- `netstat -ap | grep ssh`: check on which port ssh is running
+- `netstat -s`: print connection statistics.
+- `netstat -lx`: print all unix listening ports.
+- `netstat -i`: show network interfaces, with -e, more extended output.
+- `ifconfig -a`: view all network configuration & setting.
+- `ifconfig eth0`: to view specific network setting.
+- `ifconfig eth0 up`: enabling eth0 interface.
+- `ifconfig eth0 down`: disabling eth0 interface.
+- `nslookup`: to get ip address from dns name or vise-virsa: `nslookup www.google.fr`.
+- `traceroute`: utility to view the number of hopes to reach a given host.
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
 
