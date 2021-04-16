@@ -634,6 +634,29 @@ Regular expressions.
  we can run the `command with number 10` by typing `!10`.
 - to not save typed commands on the history, we type a space before typing the command name. 
 
+## Process control commands
+
+### background/foreground mode
+- run a process in background mode: `man ls &`, the man program will run in the background mode, we can also send a process to bakground by typing `ctrl+z` when it is in a running mode.
+- to see how many jobs we have (background running process): `jobs`
+- to return a background process to the foreground: `fg` without parameters, automatically the job with `+` sign will be brought to the background, we can also pass the identifier of a process.
+
+### ps command:
+- `ps -e`: print all running processes.
+- `ps -f`: print all running processes with full details.
+- `ps -aef | grep ls`: to get info about a specific process.
+- `ps -p 1`: to get info about a process based on a given PID.
+- `ps -u zaki`: to get info about a process based on a given UID.
+
+### top command:
+- `top` command will display the complete active process, cpu and memory information, `shift+p` will order the output based on cpu usage, `shift+m` will order based on memory usage, `c` to print the absolute path of the process, `k` to kill a process.
+-  `top -u zaki`: print only processes owned by a given user.
+
+### kill command:
+- `kill 1245` kill the process with the pid 1234, you should be able to kill a process only if youa are the owner of that process.
+- `kill -9 5678`: forcing to kill the process with sigkill signal.
+- `killall vim`: killing all the vim process.
+
 ## Network linux commands
 - `hostname`: to print the name of the host, with `-d` option it prints the domain name which the machine belongs to, with `-f` option, it prints the fully qualified domaine name, with -`i`, it prints the ip address of the machine.
 - `ping`: used to cchechk the establishement of the connection and also the speed of that connection, `ping www.google.fr`.
