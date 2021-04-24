@@ -53,6 +53,7 @@ This repository contains my personal notes on the [linux commands with shell pro
   - [SSH](#ssh)
   - [Bash history](#bash-history)- 
   - [Network linux commands](#network-linux-commands)
+  - [man page](#man-page)
 
 
 - [Shell scripting](#shell-scripting)
@@ -673,8 +674,30 @@ Regular expressions.
 - `ifconfig eth0 down`: disabling eth0 interface.
 - `nslookup`: to get ip address from dns name or vise-virsa: `nslookup www.google.fr`.
 - `traceroute`: utility to view the number of hopes to reach a given host.
+
+## [man page](#man-page)
+- man is the builtin help system in Linux, man is short for manual, a man page is a documentation.
+- `man man`: to see the man page of the man command.
+- when on the man page we can type:
+  - `h` for displaying help, `q` to quit.
+  - `y` to go backward one line.
+  - `b` backward one window. 
+  - `g` go to the first line. 
+  - `G` go to the last line. 
+- searching :
+  - by typing `/keyword`: search the keyword forward in the page.
+  - by typing `?keyword`: search the keyword backward in the page, type `n` to go to next found keyword, `N` in the reverse order.
+- `ls` man page:
+  - Synopsis: `ls [OPTION]... [FILE]...` : means that we can pass many optional option and many optional file to the `ls` command.
+- `man -k ls`: search the manual page name for the keyword `ls`.
+- `man 2 mkdir`: open the sectioné of the man page of the mkdir command.
+- The man-pages manual describes the convention that should be employed when writing man pages.
+- some shell commands(built-in shell commands) don't have a specific man page, we can use help to get more details, for example `help while` to get details about the while shell keyword.
+- we can get brief help for a given command by passing `--help` option, `ls --help` will output details about the `ls` command.
+
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
+
 
 # Shell scripting
 ## What is Shell?
