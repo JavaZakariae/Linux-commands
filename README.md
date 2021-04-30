@@ -695,6 +695,17 @@ Regular expressions.
 - some shell commands(built-in shell commands) don't have a specific man page, we can use help to get more details, for example `help while` to get details about the while shell keyword.
 - we can get brief help for a given command by passing `--help` option, `ls --help` will output details about the `ls` command.
 
+## curl command
+- curl is a tool to transfert data between from or to server using one of the supported protocols.
+- curl www.google.fr 
+- curl -i www.google.fr: extra information (headers).
+- curl -d "data inside the body post request" www.google.fr: post request.
+- curl -X PUT -d "data inside the body post request" www.google.fr: put request.
+- curl -X DELETE google.fr: to send a delet request.
+- curl -u username:password needauthentication.com.
+- curl -o resp1.txt www.google.fr : to save the response received to the resp1 file.
+
+
 ## Stackoverflow questions
 - [What is the difference between ps and top command?](https://unix.stackexchange.com/questions/62176/what-is-the-difference-between-ps-and-top-command)
 
