@@ -24,3 +24,7 @@
 ### Pipelines
 - It is possible to redirect the output of a given cmmand to the input of another command.
 - Example: `cut -d: -f1 < /etc/passwd | sort` to get all users of the system in sorted order. 
+
+### Background job
+- To run a program in a background mode: `sleep 15 &`, the sleep command will run in a background mode, we can see the state of background running programs with: `jobs`.
+- If we expect output from a background running program, it is preferably to redirect the output to a specified file. 
