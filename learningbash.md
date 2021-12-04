@@ -28,3 +28,7 @@
 ### Background job
 - To run a program in a background mode: `sleep 15 &`, the sleep command will run in a background mode, we can see the state of background running programs with: `jobs`.
 - If we expect output from a background running program, it is preferably to redirect the output to a specified file. 
+
+### Control keys
+- `CTRL-U` :  kill, Erase entire command line.
+- `CTRL-C` :  intr, Stop current command.
