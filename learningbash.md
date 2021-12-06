@@ -32,3 +32,12 @@
 ### Control keys
 - `CTRL-U` :  kill, Erase entire command line.
 - `CTRL-C` :  intr, Stop current command.
+- `CTRL-B, CTRL-F` : go backward/farward.
+- `CTRL-A, CTRL-E` : jump to the beginning/end of the line.
+
+### Customizing Environements
+- The files `.bash_profile`, `.bash_logout` and `.bashrc` when you log in or out or start a new shell.
+- `source .bash_profile`: the source command executes the commands in the specified file.
+- If `.bash_profile` doesen't exist, bash will look for `bash_login`, If that dosen't exist, it will look for `.profile`.
+- `.bash_profile` is read and executed only by the login shell, if you start up a new shell by typing shell, it will attempt to read commands from the file `.bashrc`.
+- The file `.bash_logout` is read and executed every time a login shell exits.
