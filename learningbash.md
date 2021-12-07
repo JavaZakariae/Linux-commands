@@ -35,9 +35,13 @@
 - `CTRL-B, CTRL-F` : go backward/farward.
 - `CTRL-A, CTRL-E` : jump to the beginning/end of the line.
 
-### Customizing Environements
+### Profiles
 - The files `.bash_profile`, `.bash_logout` and `.bashrc` when you log in or out or start a new shell.
 - `source .bash_profile`: the source command executes the commands in the specified file.
 - If `.bash_profile` doesen't exist, bash will look for `bash_login`, If that dosen't exist, it will look for `.profile`.
 - `.bash_profile` is read and executed only by the login shell, if you start up a new shell by typing shell, it will attempt to read commands from the file `.bashrc`.
 - The file `.bash_logout` is read and executed every time a login shell exits.
+
+### Aliases
+- An alias can be defined on the command line, in the `bash_profile` or in the `.bashrc` file.
+- alias `name=command`, This syntax specifies that `name` is an alias od thegiven command, keep in mind no space before and after the equal symbol.
