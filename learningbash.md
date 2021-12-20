@@ -45,3 +45,20 @@
 ### Aliases
 - An alias can be defined on the command line, in the `bash_profile` or in the `.bashrc` file.
 - alias `name=command`, This syntax specifies that `name` is an alias od thegiven command, keep in mind no space before and after the equal symbol.
+
+### Shell Variables
+
+  ```
+   echo "alice: $@"
+   echo "$0: $1 $2 $3 $4"
+   echo "$# arguments"
+  ```
+   - Assume, the preceiding script is called alice, if we type alice in wonderland, the following output will be printed:
+    
+  ```
+     alice: in wonderland
+     alice: in wonderland
+     2 arguments
+  ```
+   In this case, `$3` and `$4` are null. `$0` denote the name of the script, `$1` and `$2` for the given arguments, `$#` for the number of arguments.
+  
