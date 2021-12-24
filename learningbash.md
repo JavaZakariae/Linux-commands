@@ -61,4 +61,8 @@
      2 arguments
   ```
    In this case, `$3` and `$4` are null. `$0` denote the name of the script, `$1` and `$2` for the given arguments, `$#` for the number of arguments.
-  
+   
+   ### String Operators
+   - `echo ${ varname:- word }` : will print the default value `word` if varname is undefined.
+   - `echo ${ varname:= word }` : if `varname` is undefined, print `word` and assign that value to the `varname` variable.
+   - `echo ${ varname:?message }`: if `varname` is undefined, print `message`.
