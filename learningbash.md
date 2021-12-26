@@ -66,3 +66,6 @@
    - `echo ${ varname:- word }` : will print the default value `word` if varname is undefined.
    - `echo ${ varname:= word }` : if `varname` is undefined, print `word` and assign that value to the `varname` variable.
    - `echo ${ varname:?message }`: if `varname` is undefined, print `message`.
+   #### Length operator
+   - if `exo1` is a file, `echo ${#exo1}` will print 4.
+
