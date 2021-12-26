@@ -69,3 +69,9 @@
    #### Length operator
    - if `exo1` is a file, `echo ${#exo1}` will print 4.
 
+   ### Command Substitution
+   The syntax of command substitution is: `$(unix command)`.
+   
+   Example : `a=$(ls)`, the variable `a` will contain the output of the `ls` command.
+   
+   
