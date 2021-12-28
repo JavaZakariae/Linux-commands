@@ -76,4 +76,12 @@
    ### pushd and popd
    - The functions pushd and popd implement a stack of directories that enable you to move to another directory temporarily and have the shell remember where you were.
 
-   
+   ## Flow control
+   Bash supports the follwing flow control construct:
+   - if, else.
+   - for
+   - while
+   - until
+   - case
+   - select
+
