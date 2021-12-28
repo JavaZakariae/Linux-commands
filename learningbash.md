@@ -71,7 +71,9 @@
 
    ### Command Substitution
    The syntax of command substitution is: `$(unix command)`.
-   
    Example : `a=$(ls)`, the variable `a` will contain the output of the `ls` command.
    
+   ### pushd and popd
+   - The functions pushd and popd implement a stack of directories that enable you to move to another directory temporarily and have the shell remember where you were.
+
    
