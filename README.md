@@ -598,6 +598,10 @@ Regular expressions.
 - `cat var/log/syslog | grep jenkins` print logs that contains the jenkins keyword.
 
 ## Managing users
+- `useradd rayan`: to create the new user rayan.
+- `usermod -c "rayan bouali" rayan`: update the fullname of the user rayan.
+- when a new user created, all the files that exists in `/etc/skel` like `.bashrc` will be copied to the home directory of the new user.
+- `id`, `groups`: to know the id of the current user and the groups which the user belong to.
 - `cat etc/passwd`: to print the list of users with details like `uis`, `gid`, default bash...
 - `cat etc/shadow`: to check the hashed password of the users.
 - `cat etc/group`: to print the list of groups.
