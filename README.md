@@ -647,6 +647,18 @@ Regular expressions.
 
 ## Process control commands
 
+### Types of processes
+- user process: started by a regular user, they run in the user space. a user process dosen't have special access to the cpu/files that dosen't belongs to him.
+- daemon process:
+  - designed to run in background, it manages some ongoing service, like sshd, httpd.
+  - Generally they are managed by the user root. But tey run as non root user for security reasons, there is a dedicated user account for those types of processes, like sshd for the service sshd...
+  - They are often started automatically and shutdown when the system is stoped.
+  - They can be started and stoped on demand. 
+- Kenrel process: 
+  - similar to daemon process, but they run in kernel space.
+  - kernel process have access to kernel data structure which made them powerful.
+  - dificult to change the behaviour of the kernel process, for the daemon it is possible to change its behaviour by adapting the configuration files. 
+
 ### background/foreground mode
 - run a process in background mode: `man ls &`, the man program will run in the background mode, we can also send a process to bakground by typing `ctrl+z` when it is in a running mode.
 - to see how many jobs we have (background running process): `jobs`
