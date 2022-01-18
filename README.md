@@ -671,6 +671,9 @@ Regular expressions.
 - `ps -p 1`: to get info about a process based on a given PID.
 - `ps -u zaki`: to get info about a process based on a given UID.
 
+- `pstree`: to print the tree of the processes.
+- `pidof firfox`: to print the id of the process firfox.
+
 ### top command:
 - `top` command will display the complete active process, cpu and memory information, `shift+p` will order the output based on cpu usage, `shift+m` will order based on memory usage, `c` to print the absolute path of the process, `k` to kill a process.
 -  `top -u zaki`: print only processes owned by a given user.
@@ -679,6 +682,7 @@ Regular expressions.
 - `kill 1245` kill the process with the pid 1234, you should be able to kill a process only if youa are the owner of that process.
 - `kill -9 5678`: forcing to kill the process with sigkill signal.
 - `killall vim`: killing all the vim process.
+- `kill -l`: print all the signals that we can use to kill a process.
 
 ## Network linux commands
 - `hostname`: to print the name of the host, with `-d` option it prints the domain name which the machine belongs to, with `-f` option, it prints the fully qualified domaine name, with -`i`, it prints the ip address of the machine.
