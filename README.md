@@ -673,6 +673,8 @@ Regular expressions.
 
 - `pstree`: to print the tree of the processes.
 - `pidof firfox`: to print the id of the process firfox.
+- `nice`: to change the priority of a given process, `nice -n 10 vim /etc/passwd` run the vim process with a priority equal to 10.
+- a priority of a process range from -20(highest priority) to 19 (the lowest priority).  
 
 ### top command:
 - `top` command will display the complete active process, cpu and memory information, `shift+p` will order the output based on cpu usage, `shift+m` will order based on memory usage, `c` to print the absolute path of the process, `k` to kill a process.
