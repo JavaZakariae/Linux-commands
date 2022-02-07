@@ -583,12 +583,29 @@ Regular expressions.
 
 
 ## Managing systemd units
+- `systemd` is the process process started by the kernel linux, systemd is responsible for rrunning the other processes, `pstree` to show the processes in a tree structure.
+- `ps -ax` to show the processes, the id of `systemd` is 1.
+- `systemd` is a system and service manager, it introduces a concept of system units.
+- system units are represented by unit configuration files:
+  - `/etc/systemd/system/`     -->  managed by admin
+  - `/run/systemd/system`      -->  created at runtime.
+  - `usr/lib/systemd/system/`  -->  distributed with package installation.
+- Types of system units:
+  - `service units`
+  - `socket units`
+  - `path units` 
 - `systemctl status jenkins`: systemctl is included in systemd, the preceding command check the status of the jenkins service.
 - `systemctl disable jenkins`: do not start jenkins automatically after the boot.
 - `systemctl enable jenkins`: start jenkins automatically after the boot.
 - `systemctl stop jenkins`: stop the service jenkins.
 - `systemctl start jenkins`: start jenkins.
 - `systemctl restart jenkins`: restart jenkins.
+- `systemctl is-active jenkins`: is the service jenkis active?.
+- `systemctl --type=service`: show only service units.
+- `systemctl list-dependencies ssh`: show the dependencies of a given service, in other word, what are the other units that will start when starting the given service.
+- `systemctl edit --full sshd.service`: to edit the config unit file of the ssh service without the need to know the location of that file in the system.
+- `systemctl cat sshd.service`: to print the config unit file. 
+- `system show ssh.service`: to print more details about the unit configiguration of that service.
 
 ## Viewing Logs
 - `cat var/log/syslog`: print the content of the syslog file. The `var/log` directory contains logs of different services.
