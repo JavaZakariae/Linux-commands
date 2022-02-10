@@ -649,13 +649,16 @@ Regular expressions.
   - `id_rsa`: private key.
   - `id_rsa.pub`: public key.
 - ssh server configuration: 
-  - the config file to edit is `/etc/sshd_config`.
+  - the config file for ssh server to edit is `/etc/sshd_config`, the config for the client ssh is `/etc/ssh_config`.
   - we can edit some configurations like port number, prohibit root login, no user/password authentication....
   - We can allow only some users or groups to connect via ssh with `AllowsUsers groupname user1 user2`
 - keys generation:
   - ssh-key-gen: to generate new keys, by default they will be placed inside `.ssh` folder, `id_rsa` as default name of the private key, `id_rsa.pub` as default public key name, the private key should be kept private.
 - `ssh-copy-id -i /.ssh/id_rsa.pub username@1.2.3.4`: to copy the public to the remote ssh server, with that further logging will succeed without passing password or publickey. 
 - `ssh-copy-id` will copy our public key to the remote `/.ssh/authorized_keys` file in the ssh server. In the authorized_keys file, every line represent a client ssh public key.
+- `ssh root@1.1.1.1 ls /etc`: will run the command directly `ls /etc` on the remote server throught ssh without the need to get to a shell, we can use the option `-t` if there is a need for a terminal, example using vim editor. 
+- `last`, `lastb`, : to check last logging activities, `last` for successful logging, `lastb` for bad logging.
+-  `man sshd_config`: for the man page of the sshd_config file.
 
 ## Bash history
 - `history`: to print history of typed commands, every command will have an number associated.
