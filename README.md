@@ -606,13 +606,21 @@ Regular expressions.
 - `systemctl edit --full sshd.service`: to edit the config unit file of the ssh service without the need to know the location of that file in the system.
 - `systemctl cat sshd.service`: to print the config unit file. 
 - `system show ssh.service`: to print more details about the unit configiguration of that service.
+- `systemd analyse blame`: to know how much it took to boot, especially how much every serivice have taken.
 
 ## Viewing Logs
+- var/log is the location where the logs are persisted, on redhat, different components handle and manage the logs: `syslog`, `syslog-ng`, and `rsyslog`.
+- `cat /etc/rsyslog.conf`: to see the configuration of the rsyslog, details about the logs that are managed by rsyslog. 
 - `cat var/log/syslog`: print the content of the syslog file. The `var/log` directory contains logs of different services.
 - `tail -n 20 var/log/syslog`: print the last 20 lines from the syslog file.
 - `tail -f var/log/syslog`: print the last 10 lines from the syslog file, and show any live modification to the output.
 - `journalctl -u jenkins`: print only the jenkins service logs, note that we can use also the `-f` option. 
+- `journalctl -n 10`: get last 10 entries logs.
+- `journalctl -p err`: get error logs.
+- `journalctl -p debug`: get debug logs.
+- `journalctl -p debug -o json`: get debug logs and convert them to json format.
 - `cat var/log/syslog | grep jenkins` print logs that contains the jenkins keyword.
+- `cat /etc/logrotate.conf`: print the file content that contains the configuration of the rotation of the logs(removing old entries, ...) 
 
 ## Managing users
 - `useradd rayan`: to create the new user rayan.
