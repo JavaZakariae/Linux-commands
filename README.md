@@ -715,6 +715,9 @@ Regular expressions.
 - `kill -l`: print all the signals that we can use to kill a process.
 
 ## Network linux commands
+- ip adress classes:
+![image](https://user-images.githubusercontent.com/34305250/155011424-5be7d7b0-fea4-437d-8e5c-094655422281.png)
+
 - `hostname`: to print the name of the host, with `-d` option it prints the domain name which the machine belongs to, with `-f` option, it prints the fully qualified domaine name, with -`i`, it prints the ip address of the machine.
 - `ping`: used to cchechk the establishement of the connection and also the speed of that connection, `ping www.google.fr`.
 - `netstat`: list detailed information about connection to and from the host, with `-t` option we list only tcp connections, with u only udp connections and with `-l` we list only listening ports, with -p we list also the pid/program name information.
@@ -730,6 +733,9 @@ Regular expressions.
 - `ifconfig eth0 down`: disabling eth0 interface.
 - `nslookup`: to get ip address from dns name or vise-virsa: `nslookup www.google.fr`.
 - `traceroute`: utility to view the number of hopes to reach a given host.
+- `ip addr show`: print the network interfaces datails, `ip a s` for the abreviated command.
+- `route -n`: print the routing table.
+- `nmcli connection show`: to print the details of the connections.
 
 ## [man page](#man-page)
 - man is the builtin help system in Linux, man is short for manual, a man page is a documentation.
