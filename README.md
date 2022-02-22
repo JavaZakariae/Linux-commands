@@ -361,6 +361,7 @@ Regular expressions.
 - `tar` command: tape archive, to group multiple files and directories into a single archive, `tar -cvf demo.tar file1 file2 dir1`, `-c` create, `-v` verbose,`-f` named file.
 - `tar -tvf demo.tar`: print table of content of the tar file.
 - `tar -xvf demo.tar`: extract the given tar file.
+- `tar -tvzf demo.tgz file1 file2`: will compress and zip the given files.
 
 #### Apply compression algorithm on archive files (gzip bzip2)
 - `gzip demo.tar`: To compress a given file, `demo.tar.gz` will be created.
@@ -570,6 +571,7 @@ Regular expressions.
 - `htop` (cpu usage, live mode)
 - `df -mh` (disk space usage)
 - `uptime` (how long the system has been running)
+- `du -hs /var`: print how much space /var is consuming. 
 
 ## Package Management(ubuntu)
 - `apt update`: update repository(no instalation)
@@ -666,7 +668,8 @@ Regular expressions.
 - `ssh-copy-id` will copy our public key to the remote `/.ssh/authorized_keys` file in the ssh server. In the authorized_keys file, every line represent a client ssh public key.
 - `ssh root@1.1.1.1 ls /etc`: will run the command directly `ls /etc` on the remote server throught ssh without the need to get to a shell, we can use the option `-t` if there is a need for a terminal, example using vim editor. 
 - `last`, `lastb`, : to check last logging activities, `last` for successful logging, `lastb` for bad logging.
--  `man sshd_config`: for the man page of the sshd_config file.
+- `man sshd_config`: for the man page of the sshd_config file.
+- `scp EffectiveJava3rd.pptx azureuser@20.127.10.12:`: to copy the given file to a remote machine using scp.
 
 ## Bash history
 - `history`: to print history of typed commands, every command will have an number associated.
