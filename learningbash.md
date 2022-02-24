@@ -85,3 +85,15 @@
    - case
    - select
 
+## Shell variables, environement variables 
+
+![image](https://user-images.githubusercontent.com/34305250/155591888-3f549de9-a2ce-4ea6-821c-40ffb9d489b0.png)
+
+- An environement varibale can be accessed by sub process, but a shell variable can be created and acceed only by the shell process.
+- `env` or `printenv` : to print the list of the environement variables.
+- `export var1=myvariale`: to define a new env variable.
+- `unset var1`: to remove the declared env variable.
+- `var1=something`: to declare var1 as a shell variable.
+- `unset var1`: to delete var1 from the declared shell variables.
+- `set`: to print all the shell variable that were set.
+- `pstree -s -p 1000`: to print the arborescence of a given process.
