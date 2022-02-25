@@ -96,4 +96,13 @@
 - `var1=something`: to declare var1 as a shell variable.
 - `unset var1`: to delete var1 from the declared shell variables.
 - `set`: to print all the shell variable that were set.
+- `set -o`: to print all the available shell options, for example make history command available in the shell.
+- `set +o history`: will switch off the history option from the shell, no history of the typed commands will be available, `set -o history` to switch on.
 - `pstree -s -p 1000`: to print the arborescence of a given process.
+- `$USER`: connected user.
+- `$Home`: home directory.
+- `SHELL`: path of current shell.
+- `PWD`: current working directory.
+- `UID`: current unique user id.
+- `OSTYPE`: the operating system type.
+- `PS1` and `PS2`: the prompt.
