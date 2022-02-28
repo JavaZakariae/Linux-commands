@@ -106,3 +106,12 @@
 - `UID`: current unique user id.
 - `OSTYPE`: the operating system type.
 - `PS1` and `PS2`: the prompt.
+
+- Difference between ${} and $(): https://stackoverflow.com/questions/27472540/difference-between-and-in-bash
+- A shell program to read an input value and output a command result:
+  ```
+  #! /bin/bash
+  read -p "Which service you want to ckeck the status: " service
+  status=$(systemctl status ${service} | grep active)
+  echo $status
+  ```
