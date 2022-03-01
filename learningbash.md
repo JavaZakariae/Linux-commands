@@ -115,3 +115,8 @@
   status=$(systemctl status ${service} | grep active)
   echo $status
   ```
+- To declare a readonly variable: `readonly variable="hello"`.
+- `unset var1`: to unset the variable `var1`, the `var1` will no longer be used, as if it wasn't declared. 
+- echo `$?`: to print the exit status of the last executed command.
+- `test 1 -eq 1`, followed by echo `$?`: will print 0.
+- `test 1 -eq 1` is same as `[ 1 eq 1 ]`, using two brackets, we are allowed to use more operators: `[[ 1 = 1 ]]` 
