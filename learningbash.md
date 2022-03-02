@@ -120,3 +120,15 @@
 - echo `$?`: to print the exit status of the last executed command.
 - `test 1 -eq 1`, followed by echo `$?`: will print 0.
 - `test 1 -eq 1` is same as `[ 1 eq 1 ]`, using two brackets, we are allowed to use more operators: `[[ 1 = 1 ]]` 
+- `(())` are used to do matematical calculation: 
+  ```
+    f=$((1+1))
+    ((c=3+5))
+    echo $f
+    echo "c equal to $c"
+  ```
+- for floating point calculatio, we need to use the `bc` command as follows:
+  ```
+  d=$(echo "1.2 + 1.3" | bc)
+  echo "d equal to $d"
+  ```
