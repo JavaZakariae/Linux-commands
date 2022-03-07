@@ -132,3 +132,6 @@
   d=$(echo "1.2 + 1.3" | bc)
   echo "d equal to $d"
   ```
+- to interpret special characters: `echo -e "This is \n a new line"`
+- to disable new line trailing special characters: `echo -n "This line will not be followed by a new line"`  
+  
