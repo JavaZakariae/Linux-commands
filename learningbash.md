@@ -134,4 +134,16 @@
   ```
 - to interpret special characters: `echo -e "This is \n a new line"`
 - to disable new line trailing special characters: `echo -n "This line will not be followed by a new line"`  
-  
+
+### operation on scalar variables:
+
+  ```
+    sentence="today is sunday"
+    echo ${#sentence} //will print 4
+    echo ${#sentence:2} //will print day is sunday
+    echo ${#sentence:2:3} //will print day
+    echo ${#sentence:-zaki} //will print zaki if sentence wasn't defined or empty.
+    echo ${#sentence:=zaki} //will print zaki if sentence wasn't defined or empty+ the sentence variable will be initializaed with "zaki" as value.
+    echo ${#sentence:+zaki} //will print zaki, sentence will be initializaed wit the zaki value if it was defined and wasn't empty.  
+
+  ```  
