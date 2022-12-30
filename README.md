@@ -93,10 +93,10 @@ This repository contains my personal notes on the [linux commands with shell pro
 
 # Linux Commands
 ## Help
-- `man, help, apropos, whereis, whatis, which`: commands to give help about a given command.
-- `man -k text`: search if there is commands that contains the given text in there description. 
-- `mandb`: to update the man pages with the atest updates.
-- `updatedb`: to update the database, so the locate search includes the latest added files. 
+- `man, help, apropos, whereis, whatis, which`: commands that give help about a given command.
+- `man -k text`: searches for commands that contain the given text in their description.
+- `mandb`: updates the man pages with the latest updates.
+- `updatedb`: updates the database so that the locate search includes the latest added files.
 
 ## Useful Linux commands
 - How many users are logged in: `who`
