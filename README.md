@@ -126,19 +126,18 @@ This repository contains my personal notes on the [linux commands with shell pro
 - Switch from root to simple user:  `exit`
 
 ## Linux Files Types
-- Directory file.
-- Normal file [binary, text].
-- Device file : every device is represented as a file.
-- To show the type of a file: ```file file.txt```
-- Linux read files based on their content and not based on their extensions.
 
+Linux has the following file types:
+- Directory file
+- Normal file (binary or text)
+- Device file: every device is represented as a file
+- To show the type of a file, use the command file file.txt. Linux reads files based on their content and not based on their extensions.
 
-## Terminal
-- Open the terminal: `ctrl+alt+t`
-- Close the terminal: `ctrl+d`
-- Show the file that represent the current terminal: `ttl` ---> `/dev/pts/0`
-- Show files: `ls -l` `-l`  means long listing.
-
+## Terminal:
+- To open the terminal, use the shortcut ctrl + alt + t
+- To close the terminal, use ctrl + d
+- To show the file that represents the current terminal, use the command tty, which will output the file path, e.g. /dev/pts/0
+- To show files in the current directory, use the command ls -l, where -l means long listing."
 
 ## File Navigation System
 
